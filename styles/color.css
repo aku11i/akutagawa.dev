@@ -1,0 +1,9 @@
+:root {
+  --color-background: lightgreen;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: darkgreen;
+  }
+}
