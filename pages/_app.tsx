@@ -1,4 +1,4 @@
-import "tailwindcss/tailwind.css";
+import "ress/dist/ress.min.css";
 
 import type { AppProps } from "next/app";
 

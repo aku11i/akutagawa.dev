@@ -10,5 +10,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: ["@emotion", "macros"],
+  plugins: ["@emotion"],
 };
