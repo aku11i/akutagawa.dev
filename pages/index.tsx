@@ -1,6 +1,6 @@
-import Head from "next/head";
 import { css } from "@emotion/react";
 import { NextPage } from "next";
+import Head from "next/head";
 import tw from "twin.macro";
 
 const Index: NextPage = () => {
