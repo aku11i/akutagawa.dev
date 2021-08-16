@@ -21,11 +21,7 @@ const styles = {
     min-height: 100vh;
     height: 100vh;
 
-    background-color: lightgreen;
-
-    @media (prefers-color-scheme: dark) {
-      background-color: darkgreen;
-    }
+    background-color: var(--color-background);
   `,
 
   main: css``,

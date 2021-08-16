@@ -1,4 +1,5 @@
 import "ress/dist/ress.min.css";
+import "../styles/color.css";
 
 import type { AppProps } from "next/app";
 
