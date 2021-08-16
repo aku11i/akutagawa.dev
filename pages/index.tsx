@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
 import { NextPage } from "next";
 import Head from "next/head";
-import tw from "twin.macro";
 
 const Index: NextPage = () => {
   return (
@@ -22,7 +21,11 @@ const styles = {
     min-height: 100vh;
     height: 100vh;
 
-    ${tw`bg-green-400`}
+    background-color: lightgreen;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: darkgreen;
+    }
   `,
 
   main: css``,
