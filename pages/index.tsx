@@ -2,29 +2,55 @@ import { css } from "@emotion/react";
 import { NextPage } from "next";
 import Head from "next/head";
 
+import { ArticleList } from "../components/ArticleList";
+import { Profile } from "../components/Profile";
+import { SocialAccountLinks } from "../components/SocialAccountLinks";
+import { Screen } from "../styles/media";
+import { size } from "../styles/size";
+
 const Index: NextPage = () => {
   return (
     <div css={styles.container}>
       <Head>
         <title>akutagawa.dev</title>
         <meta name="description" content="" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main css={styles.main}></main>
+      <main css={styles.main}>
+        <Profile />
+        <SocialAccountLinks />
+
+        <ArticleList />
+      </main>
     </div>
   );
 };
 
 const styles = {
-  container: css`
-    min-height: 100vh;
-    height: 100vh;
+  container: [
+    css`
+      background-color: var(--color-background);
+      height: 100vh;
+    `,
+  ],
 
-    background-color: var(--color-background);
-  `,
-
-  main: css``,
+  main: [
+    css`
+      padding: 0 ${size(4)};
+    `,
+    Screen.sm(css`
+      padding: 0 ${size(12)};
+    `),
+    Screen.md(css`
+      padding: 0 ${size(24)};
+    `),
+    Screen.lg(css`
+      padding: 0 ${size(36)};
+    `),
+    Screen.xl(css`
+      padding: 0 ${size(48)};
+    `),
+  ],
 };
 
 export default Index;

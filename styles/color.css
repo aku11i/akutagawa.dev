@@ -1,9 +1,13 @@
 :root {
-  --color-background: lightgreen;
+  --color-background: lightcyan;
+  --color-text: black;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: darkgreen;
+    --color-background: black;
+    --color-text: white;
+
+    color: var(--color-text);
   }
 }
