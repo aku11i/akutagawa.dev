@@ -12,14 +12,6 @@ const minWidth =
     `;
   };
 
-export const Screen = {
-  sm: minWidth("640px"),
-  md: minWidth("768px"),
-  lg: minWidth("1024px"),
-  xl: minWidth("1280px"),
-  xl2: minWidth("1536px"),
-} as const;
-
 const colorScheme =
   (scheme: string): WithStyles =>
   (styles) => {
@@ -30,7 +22,16 @@ const colorScheme =
     `;
   };
 
-export const ColorScheme = {
+export const MediaQuery = {
+  // Responsive
+  sm: minWidth("640px"),
+  md: minWidth("768px"),
+  lg: minWidth("1024px"),
+  xl: minWidth("1280px"),
+  xl2: minWidth("1536px"),
+  // Color scheme
   light: colorScheme("light"),
   dark: colorScheme("dark"),
 } as const;
+
+export const Mq = MediaQuery;

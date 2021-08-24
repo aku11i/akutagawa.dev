@@ -6,7 +6,7 @@ import { ArticleList } from "../components/ArticleList";
 import { Profile } from "../components/Profile";
 import { SocialAccountLinks } from "../components/SocialAccountLinks";
 import { Article, getArticles } from "../helpers/article";
-import { Screen } from "../styles/media";
+import { Mq } from "../styles/mediaQuery";
 import { size } from "../styles/size";
 
 type StaticProps = {
@@ -54,16 +54,16 @@ const styles = {
       margin-bottom: ${size(36)};
       width: 90%;
     `,
-    Screen.sm(css`
+    Mq.sm(css`
       width: 80%;
     `),
-    Screen.md(css`
+    Mq.md(css`
       width: 70%;
     `),
-    Screen.lg(css`
+    Mq.lg(css`
       width: 60%;
     `),
-    Screen.xl(css`
+    Mq.xl(css`
       max-width: 800px;
       width: 50%;
     `),
