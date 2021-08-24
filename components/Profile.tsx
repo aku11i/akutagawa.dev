@@ -28,9 +28,6 @@ export const Profile: VoidFunctionComponent<ProfileProps> = ({ ...props }) => {
 
 const styles = {
   container: css`
-    padding-top: ${size(24)};
-    padding-bottom: ${size(12)};
-
     text-align: center;
   `,
 

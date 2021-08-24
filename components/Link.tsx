@@ -40,6 +40,7 @@ const style = [
       text-decoration: underline;
     }
   `,
+
   ColorScheme.dark(css`
     color: dodgerblue;
   `),

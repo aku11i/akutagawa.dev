@@ -25,42 +25,62 @@ export const getStaticProps: GetStaticProps<StaticProps> = async () => {
 
 const Index: NextPage<StaticProps> = ({ articles }) => {
   return (
-    <div css={styles.container}>
+    <>
       <Head>
         <title>akutagawa.dev</title>
         <meta name="description" content="" />
       </Head>
 
-      <main css={styles.main}>
-        <Profile />
-        <SocialAccountLinks />
+      <div css={styles.container}>
+        <main css={styles.main}>
+          <Profile css={styles.profile} />
+          <SocialAccountLinks css={styles.accounts} />
 
-        <ArticleList articles={articles} />
-      </main>
-    </div>
+          <ArticleList css={styles.articles} articles={articles} />
+        </main>
+      </div>
+    </>
   );
 };
 
 const styles = {
-  container: css``,
+  container: css`
+    display: flex;
+    justify-content: center;
+  `,
 
   main: [
     css`
-      padding: 0 ${size(4)};
+      margin-bottom: ${size(36)};
+
+      width: 90%;
     `,
     Screen.sm(css`
-      padding: 0 ${size(12)};
+      width: 80%;
     `),
     Screen.md(css`
-      padding: 0 ${size(24)};
+      width: 70%;
     `),
     Screen.lg(css`
-      padding: 0 ${size(36)};
+      width: 60%;
     `),
     Screen.xl(css`
-      padding: 0 ${size(48)};
+      width: 50%;
+      max-width: 800px;
     `),
   ],
+
+  profile: css`
+    margin-top: ${size(24)};
+  `,
+
+  accounts: css`
+    margin-top: ${size(18)};
+  `,
+
+  articles: css`
+    margin-top: ${size(18)};
+  `,
 };
 
 export default Index;

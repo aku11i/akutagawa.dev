@@ -37,7 +37,5 @@ export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
 };
 
 const styles = {
-  container: css`
-    padding: ${size(4)} 0;
-  `,
+  container: css``,
 };
