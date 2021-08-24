@@ -34,14 +34,13 @@ const styles = {
   flexContainer: css`
     display: flex;
     justify-content: center;
-
     margin-bottom: ${size(8)};
   `,
 
   icon: [
     css`
-      width: ${size(48)};
       height: ${size(48)};
+      width: ${size(48)};
     `,
   ],
 };
