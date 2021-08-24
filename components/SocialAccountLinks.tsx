@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { HTMLAttributes, VoidFunctionComponent } from "react";
 
-import { Screen } from "../styles/media";
+import { Mq } from "../styles/mediaQuery";
 import { size } from "../styles/size";
 import { IconGitHub } from "./IconGitHub";
 import { IconSpotify } from "./IconSpotify";
@@ -71,11 +71,11 @@ const styles = {
         transform: scale(1.2);
       }
     `,
-    Screen.sm(css`
+    Mq.sm(css`
       height: ${size(18)};
       width: ${size(18)};
     `),
-    Screen.md(css`
+    Mq.md(css`
       height: ${size(24)};
       width: ${size(24)};
     `),
