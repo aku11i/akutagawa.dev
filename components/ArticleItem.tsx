@@ -15,17 +15,21 @@ export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
   ...props
 }) => {
   const date = useMemo(
-    () => article.publishedDate.toLocaleString(),
+    () => new Date(article.publishedDate).toLocaleString(),
     [article.publishedDate]
   );
+
+  const hostname = useMemo(() => new URL(article.url).hostname, [article.url]);
 
   return (
     <article css={styles.container} {...props}>
       <Link href={article.url}>
-        <Typography as="h3" size="xl">
+        <Typography as="h3" size="lg">
           {article.title}
         </Typography>
-        <Typography size="sm">{date} zenn.dev</Typography>
+        <Typography size="sm">
+          {date} {hostname}
+        </Typography>
       </Link>
     </article>
   );

@@ -7,7 +7,7 @@ import { ArticleItem } from "./ArticleItem";
 import { Typography } from "./Typography";
 
 export type ArticleListProps = HTMLAttributes<HTMLDivElement> & {
-  articles?: Article[];
+  articles: Article[];
 };
 
 export const ArticleList: VoidFunctionComponent<ArticleListProps> = ({
@@ -18,16 +18,13 @@ export const ArticleList: VoidFunctionComponent<ArticleListProps> = ({
       <Typography as="h2" size="xl2">
         Articles
       </Typography>
-
-      {articles && (
-        <ul css={styles.list}>
-          {articles.map((_) => (
-            <li key={_.url}>
-              <ArticleItem article={_} />
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul css={styles.list}>
+        {articles.map((_) => (
+          <li key={_.url}>
+            <ArticleItem article={_} />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };

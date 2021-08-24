@@ -1,20 +1,23 @@
+import Parser from "rss-parser";
+
 export type Article = {
   title: string;
   url: string;
-  publishedDate: Date;
+  publishedDate: string;
 };
 
-export const getArticles = async (): Promise<Article[]> => {
-  const data: Article[] = [
-    {
-      title:
-        "社員の技術インプットを向上させるためにRSSチャンネルを導入して1年運用した話",
-      url: "https://zenn.dev/aktriver/articles/2021-07-rss-channel",
-      publishedDate: new Date(),
-    },
-  ];
+const RSS_URL = "https://zenn.dev/aktriver/feed";
 
-  await new Promise((r) => setTimeout(r, 2000));
+const parser = new Parser();
+
+export const getArticles = async (): Promise<Article[]> => {
+  const feed = await parser.parseURL(RSS_URL);
+
+  const data: Article[] = feed.items.map((item) => ({
+    title: item.title!,
+    url: item.link!,
+    publishedDate: item.pubDate!,
+  }));
 
   return data;
 };

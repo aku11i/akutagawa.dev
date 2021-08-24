@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 
 import { ArticleList } from "../components/ArticleList";
 import { Profile } from "../components/Profile";
@@ -10,12 +9,21 @@ import { Article, getArticles } from "../helpers/article";
 import { Screen } from "../styles/media";
 import { size } from "../styles/size";
 
-const Index: NextPage = () => {
-  const [articles, setArticles] = useState<Article[]>();
-  useEffect(() => {
-    getArticles().then(setArticles);
-  }, []);
+type StaticProps = {
+  articles: Article[];
+};
 
+export const getStaticProps: GetStaticProps<StaticProps> = async () => {
+  const articles = await getArticles();
+
+  return {
+    props: {
+      articles,
+    },
+  };
+};
+
+const Index: NextPage<StaticProps> = ({ articles }) => {
   return (
     <div css={styles.container}>
       <Head>
@@ -34,12 +42,7 @@ const Index: NextPage = () => {
 };
 
 const styles = {
-  container: [
-    css`
-      background-color: var(--color-background);
-      height: 100vh;
-    `,
-  ],
+  container: css``,
 
   main: [
     css`

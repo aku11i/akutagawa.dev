@@ -20,9 +20,7 @@ export const Profile: VoidFunctionComponent<ProfileProps> = ({ ...props }) => {
       </Typography>
 
       <Typography size="lg">
-        (&nbsp;
         <Link href="https://twitter.com/aku11i">@aku11i</Link>
-        &nbsp;)
       </Typography>
     </section>
   );
