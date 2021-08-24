@@ -1,27 +1,35 @@
 import { css } from "@emotion/react";
-import { VoidFunctionComponent } from "react";
+import { useMemo, VoidFunctionComponent } from "react";
 
+import { Article } from "../helpers/article";
 import { size } from "../styles/size";
 import { Link } from "./Link";
 import { Typography } from "./Typography";
 
 export type ArticleItemProps = {
-  title: string;
-  url: string;
+  article: Article;
 };
 
 export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
-  title,
-  url,
+  article,
   ...props
 }) => {
+  const date = useMemo(
+    () => new Date(article.publishedDate).toLocaleString(),
+    [article.publishedDate]
+  );
+
+  const hostname = useMemo(() => new URL(article.url).hostname, [article.url]);
+
   return (
     <article css={styles.container} {...props}>
-      <Link href={url}>
-        <Typography as="h3" size="xl">
-          {title}
+      <Link href={article.url}>
+        <Typography as="h3" size="lg">
+          {article.title}
         </Typography>
-        <Typography size="sm">2021/07/18 zenn.dev</Typography>
+        <Typography size="sm">
+          {date} {hostname}
+        </Typography>
       </Link>
     </article>
   );

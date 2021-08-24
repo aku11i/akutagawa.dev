@@ -6,10 +6,5 @@ export const Layout: FunctionComponent = ({ children }) => {
 };
 
 const styles = {
-  container: css`
-    min-height: 100vh;
-    height: 100vh;
-
-    overflow-y: scroll;
-  `,
+  container: css``,
 };

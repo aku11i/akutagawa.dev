@@ -1,14 +1,29 @@
 import { css } from "@emotion/react";
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
 import { ArticleList } from "../components/ArticleList";
 import { Profile } from "../components/Profile";
 import { SocialAccountLinks } from "../components/SocialAccountLinks";
+import { Article, getArticles } from "../helpers/article";
 import { Screen } from "../styles/media";
 import { size } from "../styles/size";
 
-const Index: NextPage = () => {
+type StaticProps = {
+  articles: Article[];
+};
+
+export const getStaticProps: GetStaticProps<StaticProps> = async () => {
+  const articles = await getArticles();
+
+  return {
+    props: {
+      articles,
+    },
+  };
+};
+
+const Index: NextPage<StaticProps> = ({ articles }) => {
   return (
     <div css={styles.container}>
       <Head>
@@ -20,19 +35,14 @@ const Index: NextPage = () => {
         <Profile />
         <SocialAccountLinks />
 
-        <ArticleList />
+        <ArticleList articles={articles} />
       </main>
     </div>
   );
 };
 
 const styles = {
-  container: [
-    css`
-      background-color: var(--color-background);
-      height: 100vh;
-    `,
-  ],
+  container: css``,
 
   main: [
     css`

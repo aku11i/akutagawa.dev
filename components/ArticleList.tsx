@@ -1,25 +1,29 @@
 import { css } from "@emotion/react";
 import { HTMLAttributes, VoidFunctionComponent } from "react";
 
+import { Article } from "../helpers/article";
 import { size } from "../styles/size";
 import { ArticleItem } from "./ArticleItem";
 import { Typography } from "./Typography";
 
-export type ArticleListProps = HTMLAttributes<HTMLDivElement>;
+export type ArticleListProps = HTMLAttributes<HTMLDivElement> & {
+  articles: Article[];
+};
 
-export const ArticleList: VoidFunctionComponent = () => {
+export const ArticleList: VoidFunctionComponent<ArticleListProps> = ({
+  articles,
+}) => {
   return (
     <section css={styles.container}>
       <Typography as="h2" size="xl2">
         Articles
       </Typography>
       <ul css={styles.list}>
-        <li>
-          <ArticleItem
-            title="社員の技術インプットを向上させるためにRSSチャンネルを導入して1年運用した話"
-            url="https://zenn.dev/aktriver/articles/2021-07-rss-channel"
-          />
-        </li>
+        {articles.map((_) => (
+          <li key={_.url}>
+            <ArticleItem article={_} />
+          </li>
+        ))}
       </ul>
     </section>
   );
