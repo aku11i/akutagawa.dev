@@ -34,11 +34,11 @@ const style = [
   css`
     color: mediumblue;
     text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
   `,
+
+  Mq.hover(css`
+    text-decoration: underline;
+  `),
 
   Mq.dark(css`
     color: dodgerblue;

@@ -66,11 +66,12 @@ const styles = {
       padding: ${size(2)};
       transition: all 0.3s ease;
       width: ${size(14)};
-
-      &:hover {
-        transform: scale(1.2);
-      }
     `,
+
+    Mq.hover(css`
+      transform: scale(1.2);
+    `),
+
     Mq.sm(css`
       height: ${size(18)};
       width: ${size(18)};
