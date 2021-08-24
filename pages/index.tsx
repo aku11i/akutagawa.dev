@@ -28,7 +28,7 @@ const Index: NextPage<StaticProps> = ({ articles }) => {
     <>
       <Head>
         <title>akutagawa.dev</title>
-        <meta name="description" content="" />
+        <meta name="description" content="A profile of software engineer." />
       </Head>
 
       <div css={styles.container}>
