@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { format } from "date-fns";
 import { useMemo, VoidFunctionComponent } from "react";
 
 import { Article } from "../helpers/article";
@@ -15,7 +16,7 @@ export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
   ...props
 }) => {
   const date = useMemo(
-    () => new Date(article.publishedDate).toLocaleString(),
+    () => format(new Date(article.publishedDate), "yyyy-MM-dd"),
     [article.publishedDate]
   );
 
