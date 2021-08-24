@@ -75,7 +75,7 @@ const styles = {
   `,
 
   accounts: css`
-    margin-top: ${size(18)};
+    margin-top: ${size(12)};
   `,
 
   articles: css`

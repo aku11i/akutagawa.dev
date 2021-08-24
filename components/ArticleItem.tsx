@@ -3,7 +3,6 @@ import { format } from "date-fns";
 import { useMemo, VoidFunctionComponent } from "react";
 
 import { Article } from "../helpers/article";
-import { size } from "../styles/size";
 import { Link } from "./Link";
 import { Typography } from "./Typography";
 
