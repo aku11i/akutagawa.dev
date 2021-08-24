@@ -12,7 +12,7 @@ yarn install
 
 ```sh
 yarn build
-# yarn preview
+# yarn start
 ```
 
 ## Lint / Prettier
