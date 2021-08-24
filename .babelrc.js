@@ -10,5 +10,5 @@ module.exports = {
       },
     ],
   ],
-  plugins: ["@emotion"],
+  plugins: ["@emotion", "inline-react-svg"],
 };
