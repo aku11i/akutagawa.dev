@@ -33,7 +33,6 @@ export const Link: FunctionComponent<LinkProps> = ({
 const style = [
   css`
     color: mediumblue;
-
     text-decoration: none;
 
     &:hover {

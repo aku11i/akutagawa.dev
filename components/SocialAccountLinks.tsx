@@ -62,24 +62,22 @@ const styles = {
 
   link: [
     css`
-      width: ${size(14)};
       height: ${size(14)};
-
-      transition: all 0.3s ease;
-
       padding: ${size(2)};
+      transition: all 0.3s ease;
+      width: ${size(14)};
 
       &:hover {
         transform: scale(1.2);
       }
     `,
     Screen.sm(css`
-      width: ${size(18)};
       height: ${size(18)};
+      width: ${size(18)};
     `),
     Screen.md(css`
-      width: ${size(24)};
       height: ${size(24)};
+      width: ${size(24)};
     `),
   ],
 };

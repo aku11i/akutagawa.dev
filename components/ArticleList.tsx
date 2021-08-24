@@ -34,8 +34,8 @@ const styles = {
   container: css``,
 
   list: css`
-    margin-top: ${size(4)};
     list-style-type: none;
+    margin-top: ${size(4)};
   `,
 
   listItem: css`

@@ -52,7 +52,6 @@ const styles = {
   main: [
     css`
       margin-bottom: ${size(36)};
-
       width: 90%;
     `,
     Screen.sm(css`
@@ -65,8 +64,8 @@ const styles = {
       width: 60%;
     `),
     Screen.xl(css`
-      width: 50%;
       max-width: 800px;
+      width: 50%;
     `),
   ],
 
