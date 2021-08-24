@@ -22,6 +22,16 @@ const colorScheme =
     `;
   };
 
+const hover: WithStyles = (styles) => {
+  return css`
+    @media (hover: hover) and (pointer: fine) {
+      :hover {
+        ${styles}
+      }
+    }
+  `;
+};
+
 export const MediaQuery = {
   // Responsive
   sm: minWidth("640px"),
@@ -32,6 +42,8 @@ export const MediaQuery = {
   // Color scheme
   light: colorScheme("light"),
   dark: colorScheme("dark"),
+  // Other queries
+  hover,
 } as const;
 
 export const Mq = MediaQuery;
