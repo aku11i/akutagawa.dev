@@ -1,14 +1,21 @@
 import { css } from "@emotion/react";
 import { NextPage } from "next";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 
 import { ArticleList } from "../components/ArticleList";
 import { Profile } from "../components/Profile";
 import { SocialAccountLinks } from "../components/SocialAccountLinks";
+import { Article, getArticles } from "../helpers/article";
 import { Screen } from "../styles/media";
 import { size } from "../styles/size";
 
 const Index: NextPage = () => {
+  const [articles, setArticles] = useState<Article[]>();
+  useEffect(() => {
+    getArticles().then(setArticles);
+  }, []);
+
   return (
     <div css={styles.container}>
       <Head>
@@ -20,7 +27,7 @@ const Index: NextPage = () => {
         <Profile />
         <SocialAccountLinks />
 
-        <ArticleList />
+        <ArticleList articles={articles} />
       </main>
     </div>
   );
