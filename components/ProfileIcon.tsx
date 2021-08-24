@@ -1,8 +1,7 @@
 import { css } from "@emotion/react";
-import Image from "next/image";
 import { VoidFunctionComponent } from "react";
 
-import profile from "../public/profile.jpeg";
+import profile from "../public/profile.webp";
 
 export type ProfileIconProps = JSX.IntrinsicElements["div"];
 
@@ -11,7 +10,8 @@ export const ProfileIcon: VoidFunctionComponent<ProfileIconProps> = ({
 }) => {
   return (
     <div {...props}>
-      <Image css={styles.image} src={profile} alt="profile icon" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img css={styles.image} src={profile.src} alt="profile icon" />
     </div>
   );
 };
