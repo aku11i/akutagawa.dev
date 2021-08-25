@@ -4,7 +4,7 @@ import { useEffect, useRef, VoidFunctionComponent } from "react";
 import { Mq } from "../../styles/mediaQuery";
 
 const POINTER_SIZE = 40;
-const SCALE_FACTOR = 1.3;
+const SCALE_FACTOR = 2;
 
 export const STICKY_CLASS = "sticky";
 
@@ -29,15 +29,15 @@ export const Stalker: VoidFunctionComponent = () => {
 
   const getPosition = (el: HTMLElement) => {
     return {
-      top: el.offsetTop || el.clientTop,
-      left: el.offsetLeft || el.clientLeft,
+      top: el.offsetTop,
+      left: el.offsetLeft,
     };
   };
 
   const getSize = (el: HTMLElement) => {
     return {
-      width: el.offsetWidth || el.clientWidth,
-      height: el.offsetHeight || el.clientHeight,
+      width: el.offsetWidth,
+      height: el.offsetHeight,
     };
   };
 
@@ -74,11 +74,11 @@ export const Stalker: VoidFunctionComponent = () => {
         const { top, left } = getPosition(event.target as HTMLElement);
         const { width, height } = getSize(event.target as HTMLElement);
         setPosition(top + height / 2, left + width / 2);
-        setSize(width * SCALE_FACTOR, height * SCALE_FACTOR);
+        setSize(width, height);
 
         pointer.style.borderRadius = "8px";
       } else {
-        setSize(POINTER_SIZE * 2, POINTER_SIZE * 2);
+        setSize(POINTER_SIZE * SCALE_FACTOR, POINTER_SIZE * SCALE_FACTOR);
       }
     };
 
