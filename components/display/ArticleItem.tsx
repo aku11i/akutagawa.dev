@@ -23,7 +23,7 @@ export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
 
   return (
     <article css={styles.container} {...props}>
-      <Link href={article.url}>
+      <Link css={styles.link} href={article.url}>
         <Typography as="h3" size="lg">
           {article.title}
         </Typography>
@@ -37,4 +37,8 @@ export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
 
 const styles = {
   container: css``,
+
+  link: css`
+    display: block;
+  `,
 };
