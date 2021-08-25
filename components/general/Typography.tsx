@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { ElementType, FunctionComponent, HTMLAttributes, useMemo } from "react";
 
-import { TextSize } from "../styles/size";
+import { TextSize } from "../../styles/size";
 
 export type TypographyProps = HTMLAttributes<HTMLElement> & {
   size?: number | keyof typeof TextSize;

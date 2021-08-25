@@ -1,11 +1,11 @@
 import { css } from "@emotion/react";
 import { VoidFunctionComponent } from "react";
 
-import profile from "../public/profile.webp";
+import profile from "../../public/profile.webp";
 
 export type ProfileIconProps = JSX.IntrinsicElements["div"];
 
-export const ProfileIcon: VoidFunctionComponent<ProfileIconProps> = ({
+export const IconProfile: VoidFunctionComponent<ProfileIconProps> = ({
   ...props
 }) => {
   return (
