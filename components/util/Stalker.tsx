@@ -82,13 +82,13 @@ export const Stalker: VoidFunctionComponent = () => {
       }
     };
 
-    document.querySelectorAll("a").forEach((el) => {
-      el.addEventListener("mouseenter", handleMouseEnter);
+    document.querySelectorAll("a, button").forEach((el) => {
+      (el as HTMLElement).addEventListener("mouseenter", handleMouseEnter);
     });
 
     return () => {
-      document.querySelectorAll("a").forEach((el) => {
-        el.removeEventListener("mouseenter", handleMouseEnter);
+      document.querySelectorAll("a, button").forEach((el) => {
+        (el as HTMLElement).removeEventListener("mouseenter", handleMouseEnter);
       });
     };
   }, []);
@@ -105,11 +105,11 @@ export const Stalker: VoidFunctionComponent = () => {
       setSize(POINTER_SIZE, POINTER_SIZE);
     };
 
-    document.querySelectorAll("a").forEach((el) => {
+    document.querySelectorAll("a, button").forEach((el) => {
       (el as HTMLElement).addEventListener("mouseleave", handleMouseLeave);
     });
     return () => {
-      document.querySelectorAll("a").forEach((el) => {
+      document.querySelectorAll("a, button").forEach((el) => {
         (el as HTMLElement).removeEventListener("mouseleave", handleMouseLeave);
       });
     };
