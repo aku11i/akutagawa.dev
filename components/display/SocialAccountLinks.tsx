@@ -3,7 +3,7 @@ import { HTMLAttributes, VoidFunctionComponent } from "react";
 
 import { Mq } from "../../styles/mediaQuery";
 import { size } from "../../styles/size";
-import { Link } from "../general/Link";
+import { StickyLink } from "../general/StickyLink";
 import { IconGitHub } from "../icon/IconGitHub";
 import { IconSpotify } from "../icon/IconSpotify";
 import { IconTwitter } from "../icon/IconTwitter";
@@ -39,7 +39,7 @@ export const SocialAccountLinks: VoidFunctionComponent<SocialAccountLinksProps> 
     return (
       <nav css={styles.container} {...props}>
         {accounts.map((_, i) => (
-          <Link
+          <StickyLink
             key={i}
             css={styles.link}
             href={_.url}
@@ -47,7 +47,7 @@ export const SocialAccountLinks: VoidFunctionComponent<SocialAccountLinksProps> 
             {...props}
           >
             <_.icon />
-          </Link>
+          </StickyLink>
         ))}
       </nav>
     );
@@ -67,11 +67,6 @@ const styles = {
       transition: all 0.3s ease;
       width: ${size(14)};
     `,
-
-    Mq.hover(css`
-      transform: scale(1.2);
-    `),
-
     Mq.sm(css`
       height: ${size(18)};
       width: ${size(18)};
