@@ -2,9 +2,9 @@ import { css } from "@emotion/react";
 import { format } from "date-fns";
 import { useMemo, VoidFunctionComponent } from "react";
 
-import { Article } from "../helpers/article";
-import { Link } from "./Link";
-import { Typography } from "./Typography";
+import { Article } from "../../helpers/article";
+import { Link } from "../general/Link";
+import { Typography } from "../general/Typography";
 
 export type ArticleItemProps = {
   article: Article;

@@ -4,13 +4,13 @@ import "../styles/font.css";
 
 import type { AppProps } from "next/app";
 
-import { Layout } from "../components/Layout";
+import { LayoutDefault } from "../components/layout/LayoutDefault";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <Layout>
+    <LayoutDefault>
       <Component {...pageProps} />
-    </Layout>
+    </LayoutDefault>
   );
 }
 export default MyApp;

@@ -1,10 +1,10 @@
 import { css } from "@emotion/react";
 import { HTMLAttributes, VoidFunctionComponent } from "react";
 
-import { Article } from "../helpers/article";
-import { size } from "../styles/size";
+import { Article } from "../../helpers/article";
+import { size } from "../../styles/size";
+import { Typography } from "../general/Typography";
 import { ArticleItem } from "./ArticleItem";
-import { Typography } from "./Typography";
 
 export type ArticleListProps = HTMLAttributes<HTMLDivElement> & {
   articles: Article[];

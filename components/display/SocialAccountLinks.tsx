@@ -1,13 +1,13 @@
 import { css } from "@emotion/react";
 import { HTMLAttributes, VoidFunctionComponent } from "react";
 
-import { Mq } from "../styles/mediaQuery";
-import { size } from "../styles/size";
-import { IconGitHub } from "./IconGitHub";
-import { IconSpotify } from "./IconSpotify";
-import { IconTwitter } from "./IconTwitter";
-import { IconZenn } from "./IconZenn";
-import { Link } from "./Link";
+import { Mq } from "../../styles/mediaQuery";
+import { size } from "../../styles/size";
+import { Link } from "../general/Link";
+import { IconGitHub } from "../icon/IconGitHub";
+import { IconSpotify } from "../icon/IconSpotify";
+import { IconTwitter } from "../icon/IconTwitter";
+import { IconZenn } from "../icon/IconZenn";
 
 const accounts = [
   {

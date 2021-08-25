@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { VoidFunctionComponent } from "react";
 
-import Twitter from "../public/twitter.svg";
+import Twitter from "../../public/twitter.svg";
 
 export const IconTwitter: VoidFunctionComponent = () => <Twitter css={style} />;
 

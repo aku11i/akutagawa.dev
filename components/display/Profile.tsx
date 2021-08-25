@@ -1,10 +1,10 @@
 import { css } from "@emotion/react";
 import { HTMLAttributes, VoidFunctionComponent } from "react";
 
-import { size } from "../styles/size";
-import { Link } from "./Link";
-import { ProfileIcon } from "./ProfileIcon";
-import { Typography } from "./Typography";
+import { size } from "../../styles/size";
+import { Link } from "../general/Link";
+import { Typography } from "../general/Typography";
+import { IconProfile } from "../icon/IconProfile";
 
 export type ProfileProps = HTMLAttributes<HTMLDivElement>;
 
@@ -12,7 +12,7 @@ export const Profile: VoidFunctionComponent<ProfileProps> = ({ ...props }) => {
   return (
     <section css={styles.container} {...props}>
       <div css={styles.flexContainer}>
-        <ProfileIcon css={styles.icon} />
+        <IconProfile css={styles.icon} />
       </div>
 
       <Typography as="h1" size="xl3">

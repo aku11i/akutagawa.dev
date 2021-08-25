@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { AnchorHTMLAttributes, FunctionComponent, useMemo } from "react";
 
-import { Mq } from "../styles/mediaQuery";
+import { Mq } from "../../styles/mediaQuery";
 
 export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   openInNewTab?: boolean;

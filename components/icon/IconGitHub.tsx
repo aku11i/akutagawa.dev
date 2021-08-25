@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 import { VoidFunctionComponent } from "react";
 
-import GitHub from "../public/github.svg";
-import { Mq } from "../styles/mediaQuery";
+import GitHub from "../../public/github.svg";
+import { Mq } from "../../styles/mediaQuery";
 
 export const IconGitHub: VoidFunctionComponent = () => <GitHub css={style} />;
 
