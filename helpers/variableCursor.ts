@@ -14,11 +14,12 @@ export type VariableCursorOptions = {
   pointerColor?: string;
   pointerOpacity?: number;
   pointerBorderRadius?: string;
+  normalDuration?: number;
   stickDuration?: number;
   stickOpacity?: number;
-  unstickDuration?: number;
   moveDuration?: number;
   expandScale?: number;
+  expandDuration?: number;
   expandOpacity?: number;
   zIndex?: string;
 };
@@ -36,11 +37,12 @@ export function variableCursor(
     pointerColor = "gray",
     pointerOpacity = 0.5,
     pointerBorderRadius = "50%",
+    normalDuration = 0.1,
     stickDuration = 0.15,
     stickOpacity = 0.3,
-    unstickDuration = 0.1,
     moveDuration = 0.1,
     expandScale = 2,
+    expandDuration = 0.1,
     expandOpacity = 0.4,
     zIndex = "99999",
   }: VariableCursorOptions = {}
@@ -72,7 +74,7 @@ export function variableCursor(
       height: pointerSize,
       opacity: pointerOpacity,
       borderRadius: pointerBorderRadius,
-      duration: unstickDuration,
+      duration: normalDuration,
       ease: Power2.easeOut,
       overwrite: true,
     });
@@ -107,7 +109,7 @@ export function variableCursor(
       width: pointerSize * expandScale,
       height: pointerSize * expandScale,
       opacity: expandOpacity,
-      duration: unstickDuration,
+      duration: expandDuration,
       ease: Power2.easeOut,
       overwrite: true,
     });
