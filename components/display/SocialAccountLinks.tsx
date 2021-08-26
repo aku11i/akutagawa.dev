@@ -39,7 +39,13 @@ export const SocialAccountLinks: VoidFunctionComponent<SocialAccountLinksProps> 
     return (
       <nav css={styles.container} {...props}>
         {accounts.map((_, i) => (
-          <Link key={i} css={styles.link} href={_.url} title={_.name} stick>
+          <Link
+            key={i}
+            css={styles.link}
+            href={_.url}
+            title={_.name}
+            data-variable-cursor-type="stick"
+          >
             <_.icon />
           </Link>
         ))}
