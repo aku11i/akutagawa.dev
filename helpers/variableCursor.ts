@@ -58,6 +58,8 @@ export function variableCursor(
     borderRadius: pointerBorderRadius,
     width: pointerSize,
     height: pointerSize,
+    top: -pointerSize,
+    left: -pointerSize,
   });
 
   const normal = () => {
