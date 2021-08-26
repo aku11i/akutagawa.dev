@@ -3,7 +3,7 @@ import { HTMLAttributes, VoidFunctionComponent } from "react";
 
 import { Mq } from "../../styles/mediaQuery";
 import { size } from "../../styles/size";
-import { StickyLink } from "../general/StickyLink";
+import { Link } from "../general/Link";
 import { IconGitHub } from "../icon/IconGitHub";
 import { IconSpotify } from "../icon/IconSpotify";
 import { IconTwitter } from "../icon/IconTwitter";
@@ -39,15 +39,9 @@ export const SocialAccountLinks: VoidFunctionComponent<SocialAccountLinksProps> 
     return (
       <nav css={styles.container} {...props}>
         {accounts.map((_, i) => (
-          <StickyLink
-            key={i}
-            css={styles.link}
-            href={_.url}
-            title={_.name}
-            {...props}
-          >
+          <Link key={i} css={styles.link} href={_.url} title={_.name} stick>
             <_.icon />
-          </StickyLink>
+          </Link>
         ))}
       </nav>
     );
