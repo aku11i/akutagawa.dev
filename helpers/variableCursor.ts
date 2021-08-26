@@ -44,7 +44,7 @@ export function variableCursor(
     expandScale = 2,
     expandDuration = 0.1,
     expandOpacity = 0.4,
-    zIndex = "99999",
+    zIndex = "100000",
   }: VariableCursorOptions = {}
 ): VariableCursorResult {
   let current: VariableCursorType = VariableCursorType.NONE;
