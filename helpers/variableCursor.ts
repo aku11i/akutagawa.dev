@@ -1,18 +1,26 @@
 import { gsap, Power2 } from "gsap";
 
-export const DEFAULT_STICK_CLASS = "__variable_cursor_stick";
-export const DEFAULT_EXPAND_CLASS = "__variable_cursor_expand";
+export const TYPE_ATTRIBUTE_NAME = "data-variable-cursor-type";
+
+export enum VariableCursorType {
+  NONE = "none",
+  NORMAL = "normal",
+  STICK = "stick",
+  EXPAND = "expand",
+}
 
 export type VariableCursorOptions = {
   pointerSize?: number;
   pointerColor?: string;
   pointerOpacity?: number;
-  stickSelector?: string;
+  pointerBorderRadius?: string;
   stickDuration?: number;
+  stickOpacity?: number;
   unstickDuration?: number;
   moveDuration?: number;
-  expandSelector?: string;
   expandScale?: number;
+  expandOpacity?: number;
+  zIndex?: string;
 };
 
 export type VariableCursorResult = {
@@ -26,32 +34,52 @@ export function variableCursor(
   {
     pointerSize = 30,
     pointerColor = "gray",
-    pointerOpacity = 0.4,
-    stickSelector = `.${DEFAULT_STICK_CLASS}`,
+    pointerOpacity = 0.5,
+    pointerBorderRadius = "50%",
     stickDuration = 0.15,
+    stickOpacity = 0.3,
     unstickDuration = 0.1,
     moveDuration = 0.1,
-    expandSelector = `.${DEFAULT_EXPAND_CLASS}`,
     expandScale = 2,
+    expandOpacity = 0.4,
+    zIndex = "99999",
   }: VariableCursorOptions = {}
 ): VariableCursorResult {
-  let isSticking = false;
+  let current: VariableCursorType = VariableCursorType.NONE;
 
   element.style.position = "absolute";
   element.style.transform = "translate(-50%, -50%)";
-  element.style.zIndex = "99999";
+  element.style.zIndex = zIndex;
   element.style.pointerEvents = "none";
 
   gsap.set(element, {
-    backgroundColor: pointerColor,
     opacity: pointerOpacity,
-    borderRadius: "50%",
+    backgroundColor: pointerColor,
+    borderRadius: pointerBorderRadius,
     width: pointerSize,
     height: pointerSize,
   });
 
+  const normal = () => {
+    if (current === VariableCursorType.NORMAL) return;
+
+    current = VariableCursorType.NORMAL;
+
+    gsap.to(element, {
+      width: pointerSize,
+      height: pointerSize,
+      opacity: pointerOpacity,
+      borderRadius: pointerBorderRadius,
+      duration: unstickDuration,
+      ease: Power2.easeOut,
+      overwrite: true,
+    });
+  };
+
   const stick = (target: HTMLElement) => {
-    isSticking = true;
+    if (current === VariableCursorType.STICK) return;
+
+    current = VariableCursorType.STICK;
 
     const { offsetTop, offsetLeft, offsetHeight, offsetWidth } = target;
 
@@ -60,6 +88,7 @@ export function variableCursor(
       left: offsetLeft + offsetWidth / 2,
       width: offsetWidth,
       height: offsetHeight,
+      opacity: stickOpacity,
       borderRadius: `${Math.min(offsetHeight, offsetWidth) * 0.1}px`,
       duration: stickDuration,
       ease: Power2.easeInOut,
@@ -67,74 +96,64 @@ export function variableCursor(
     });
   };
 
-  const unstick = () => {
-    isSticking = false;
-
-    gsap.to(element, {
-      width: pointerSize,
-      height: pointerSize,
-      borderRadius: "50%",
-      duration: unstickDuration,
-      ease: Power2.easeOut,
-      overwrite: true,
-    });
-  };
-
   const expand = () => {
+    if (current === VariableCursorType.EXPAND) return;
+
+    current = VariableCursorType.EXPAND;
+
     gsap.to(element, {
-      scale: expandScale,
+      width: pointerSize * expandScale,
+      height: pointerSize * expandScale,
+      opacity: expandOpacity,
       duration: unstickDuration,
       ease: Power2.easeOut,
       overwrite: true,
     });
   };
-
-  const unexpand = () => {
-    gsap.to(element, {
-      scale: 1,
-      duration: unstickDuration,
-      ease: Power2.easeOut,
-      overwrite: true,
-    });
-  };
-
-  window.document.querySelectorAll(expandSelector).forEach((_) => {
-    const el = _ as HTMLElement;
-
-    const handleMouseEnter = () => {
-      expand();
-    };
-    el.addEventListener("mouseenter", handleMouseEnter);
-
-    const handleMouseLeave = () => {
-      unexpand();
-    };
-    el.addEventListener("mouseleave", handleMouseLeave);
-  });
-
-  window.document.querySelectorAll(stickSelector).forEach((_) => {
-    const el = _ as HTMLElement;
-
-    const handleMouseEnter = () => {
-      stick(el);
-    };
-    el.addEventListener("mouseenter", handleMouseEnter);
-
-    const handleMouseLeave = () => {
-      unstick();
-    };
-    el.addEventListener("mouseleave", handleMouseLeave);
-  });
 
   const handleMouseMove = (event: MouseEvent) => {
-    const { pageY, pageX } = event;
-    if (isSticking) return;
+    const { pageX, pageY, clientX, clientY } = event;
 
-    gsap.to(element, {
-      top: pageY,
-      left: pageX,
-      duration: moveDuration,
-    });
+    if (current === VariableCursorType.NONE) {
+      gsap.set(element, {
+        top: pageY,
+        left: pageX,
+      });
+      normal();
+      return;
+    }
+
+    if (current !== VariableCursorType.STICK) {
+      gsap.to(element, {
+        top: pageY,
+        left: pageX,
+        duration: moveDuration,
+      });
+    }
+
+    const target = document
+      .elementsFromPoint(clientX, clientY)
+      .find((el) => el.hasAttribute(TYPE_ATTRIBUTE_NAME));
+
+    if (!target) {
+      if (current !== VariableCursorType.NORMAL) normal();
+      return;
+    }
+
+    const cursorType =
+      (target.getAttribute(TYPE_ATTRIBUTE_NAME) as VariableCursorType) ||
+      VariableCursorType.NORMAL;
+
+    switch (cursorType) {
+      case VariableCursorType.STICK:
+        stick(target as HTMLElement);
+        return;
+      case VariableCursorType.EXPAND:
+        expand();
+        return;
+      default:
+        return;
+    }
   };
 
   const mount: VariableCursorResult["mount"] = (to = document.body) => {

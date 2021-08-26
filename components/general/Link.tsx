@@ -1,22 +1,14 @@
 import { css } from "@emotion/react";
-import classnames from "classnames";
 import { AnchorHTMLAttributes, FunctionComponent, useMemo } from "react";
 
-import {
-  DEFAULT_EXPAND_CLASS,
-  DEFAULT_STICK_CLASS,
-} from "../../helpers/variableCursor";
 import { Mq } from "../../styles/mediaQuery";
 
 export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   openInNewTab?: boolean;
-  stick?: boolean;
 };
 
 export const Link: FunctionComponent<LinkProps> = ({
   openInNewTab,
-  stick,
-  className,
   children,
   ...props
 }) => {
@@ -34,10 +26,7 @@ export const Link: FunctionComponent<LinkProps> = ({
   return (
     <a
       css={style}
-      className={classnames(
-        className,
-        stick ? DEFAULT_STICK_CLASS : DEFAULT_EXPAND_CLASS
-      )}
+      data-variable-cursor-type="expand"
       {...props}
       {...additionalProps}
     >
