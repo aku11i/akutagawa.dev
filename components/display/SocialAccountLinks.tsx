@@ -44,7 +44,7 @@ export const SocialAccountLinks: VoidFunctionComponent<SocialAccountLinksProps> 
             css={styles.link}
             href={_.url}
             title={_.name}
-            data-variable-cursor-type="stick"
+            data-kimochii-pointer="sticky"
           >
             <_.icon />
           </Link>

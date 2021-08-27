@@ -26,7 +26,7 @@ export const Link: FunctionComponent<LinkProps> = ({
   return (
     <a
       css={style}
-      data-variable-cursor-type="expand"
+      data-kimochii-pointer="expanded"
       {...props}
       {...additionalProps}
     >
