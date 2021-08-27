@@ -17,7 +17,7 @@ export const ArticleList: VoidFunctionComponent<ArticleListProps> = ({
   return (
     <section css={styles.container} {...props}>
       <Typography as="h2" size="xl2">
-        Articles
+        <span data-kimochii-pointer="text">Articles</span>
       </Typography>
       <ul css={styles.list}>
         {articles.map((_) => (
