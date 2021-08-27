@@ -16,7 +16,7 @@ export const Profile: VoidFunctionComponent<ProfileProps> = ({ ...props }) => {
       </div>
 
       <Typography as="h1" size="xl3">
-        Shuhei Akutagawa
+        <span data-kimochii-pointer="text">Shuhei Akutagawa</span>
       </Typography>
 
       <Typography size="lg">
