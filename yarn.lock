@@ -2332,9 +2332,9 @@ human-signals@^2.1.0:
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
 husky@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.1.tgz#579f4180b5da4520263e8713cc832942b48e1f1c"
-  integrity sha512-gceRaITVZ+cJH9sNHqx5tFwbzlLCVxtVZcusME8JYQ8Edy5mpGDOqD8QBCdMhpyo9a+JXddnujQ4rpY2Ff9SJA==
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.2.tgz#21900da0f30199acca43a46c043c4ad84ae88dff"
+  integrity sha512-8yKEWNX4z2YsofXAMT7KvA1g8p+GxtB1ffV8XtpAEGuXNAbCV5wdNKH+qTpw8SM9fh4aMPDR+yQuKfgnreyZlg==
 
 iconv-lite@0.4.24:
   version "0.4.24"
@@ -2715,10 +2715,10 @@ json5@^2.1.2, json5@^2.2.0:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
 
-kimochii-pointer@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/kimochii-pointer/-/kimochii-pointer-0.5.1.tgz#63552ad8d3ed02b38183dda882db05d1a0359c0c"
-  integrity sha512-It86SWhjnUL/9delH13gVN641bhGg+1KbT6vk9h2ozMx3dzGeBzQZcVVQK2ArL5ujfwHepeCF3a7USnQNedqyg==
+kimochii-pointer@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/kimochii-pointer/-/kimochii-pointer-0.6.1.tgz#22e09c679808253cb909961bc870930854bfc6c1"
+  integrity sha512-DDHIBTkx76CFEZdXK+/OSw32mBj0nvHcmOnZpEWGqFIqY7WQezjE45LJJu9daExX2i+QuHlIiNrlmQytSxyOuw==
 
 kind-of@^6.0.2, kind-of@^6.0.3:
   version "6.0.3"
