@@ -11,7 +11,12 @@ export const IconProfile: VoidFunctionComponent<ProfileIconProps> = ({
   return (
     <div {...props}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img css={styles.image} src={profile.src} alt="profile icon" />
+      <img
+        css={styles.image}
+        src={profile.src}
+        alt="profile icon"
+        data-kimochii-pointer="lighter"
+      />
     </div>
   );
 };
