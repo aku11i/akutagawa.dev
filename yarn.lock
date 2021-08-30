@@ -2715,10 +2715,10 @@ json5@^2.1.2, json5@^2.2.0:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
 
-kimochii-pointer@^0.7.3:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/kimochii-pointer/-/kimochii-pointer-0.7.3.tgz#b1f4ed4aa2ed0924cfa94f1e82551fa72164367b"
-  integrity sha512-pukFMRr/8DxUQxwtW0v8ZlDjJPRy5VzIfaKj7yrLYeNRGs8pJY30gKtpnKVByeCMlz0YqP4qum8/nq806Lu2Gg==
+kimochii-pointer@^0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/kimochii-pointer/-/kimochii-pointer-0.9.3.tgz#e2b6ac04b24510df7a5eea17c7fa5a892ac84387"
+  integrity sha512-nbe3xelJnmZqRAvzOumGttWk46barc3a/Gg9t8bM96dsSy5OdE/YlXMoD2w3VE0bXRI28KEK/I/hwVPNHSXDGw==
 
 kind-of@^6.0.2, kind-of@^6.0.3:
   version "6.0.3"
