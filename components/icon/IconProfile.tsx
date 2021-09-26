@@ -1,7 +1,8 @@
 import { css } from "@emotion/react";
+import Image from "next/image";
 import { VoidFunctionComponent } from "react";
 
-import profile from "../../public/profile.webp";
+import profile from "../../public/profile.jpg";
 
 export type ProfileIconProps = JSX.IntrinsicElements["div"];
 
@@ -9,22 +10,23 @@ export const IconProfile: VoidFunctionComponent<ProfileIconProps> = ({
   ...props
 }) => {
   return (
-    <div {...props}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        css={styles.image}
+    <div css={styles.imageContainer} {...props}>
+      <Image
         src={profile.src}
         alt="profile icon"
         data-kimochii-pointer="lighter"
+        css={styles.image}
+        layout="fill"
       />
     </div>
   );
 };
 
 const styles = {
+  imageContainer: css`
+    position: relative;
+  `,
   image: css`
     border-radius: 50%;
-    height: 100%;
-    width: 100%;
   `,
 };
