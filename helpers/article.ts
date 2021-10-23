@@ -1,23 +1,33 @@
 import Parser from "rss-parser";
 
-export type Article = {
-  title: string;
-  url: string;
-  publishedDate: string;
-};
-
-const RSS_URL = "https://zenn.dev/aktriver/feed";
+import { Article, OTHER_ARTICLES, RSS_LIST } from "../articles";
 
 const parser = new Parser();
 
 export const getArticles = async (): Promise<Article[]> => {
-  const feed = await parser.parseURL(RSS_URL);
+  const articlesFromRss = (
+    await Promise.all(RSS_LIST.map(getArticlesFromRss))
+  ).flat();
 
-  const data: Article[] = feed.items.map((item) => ({
+  const otherArticles = OTHER_ARTICLES;
+
+  return mergeArticles(articlesFromRss, otherArticles);
+};
+
+const getArticlesFromRss = async (url: string): Promise<Article[]> => {
+  const feed = await parser.parseURL(url);
+
+  return feed.items.map((item) => ({
     title: item.title!,
     url: item.link!,
     publishedDate: item.pubDate!,
   }));
+};
 
-  return data;
+const mergeArticles = (...articlesList: Article[][]): Article[] => {
+  const articles = articlesList.flat();
+  return articles.sort(
+    (a, b) =>
+      new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+  );
 };
