@@ -28,7 +28,7 @@
     "*.{js,cjs,json,yml,md}": "prettier --write"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.1",
+    "@emotion/react": "^11.5.0",
     "classnames": "^2.3.1",
     "date-fns": "^2.24.0",
     "gsap": "^3.8.0",
