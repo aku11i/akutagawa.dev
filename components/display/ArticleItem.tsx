@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import { format } from "date-fns";
 import { useMemo, VoidFunctionComponent } from "react";
 
-import { Article } from "../../helpers/article";
+import { Article } from "../../articles";
 import { Link } from "../general/Link";
 import { Typography } from "../general/Typography";
 

@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { HTMLAttributes, VoidFunctionComponent } from "react";
 
-import { Article } from "../../helpers/article";
+import { Article } from "../../articles";
 import { size } from "../../styles/size";
 import { Typography } from "../general/Typography";
 import { ArticleItem } from "./ArticleItem";

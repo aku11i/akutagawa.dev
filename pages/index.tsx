@@ -2,10 +2,11 @@ import { css } from "@emotion/react";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
+import { Article } from "../articles";
 import { ArticleList } from "../components/display/ArticleList";
 import { Profile } from "../components/display/Profile";
 import { SocialAccountLinks } from "../components/display/SocialAccountLinks";
-import { Article, getArticles } from "../helpers/article";
+import { getArticles } from "../helpers/article";
 import { Mq } from "../styles/mediaQuery";
 import { size } from "../styles/size";
 
