@@ -3,13 +3,22 @@
   "plugins": ["stylelint-order", "stylelint-prettier"],
   "rules": {
     "order/properties-alphabetical-order": true,
-    "no-empty-source": null,
-    "no-eol-whitespace": null,
-    "no-missing-end-of-source-newline": null,
-    "value-keyword-case": null,
-    "declaration-colon-newline-after": null,
-    "value-list-comma-newline-after": null,
-    "prettier/prettier": true,
-    "indentation": null
-  }
+    "prettier/prettier": true
+  },
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "customSyntax": "@stylelint/postcss-css-in-js",
+      "rules": {
+        "no-empty-first-line": null,
+        "no-empty-source": null,
+        "no-eol-whitespace": null,
+        "no-missing-end-of-source-newline": null,
+        "value-keyword-case": null,
+        "declaration-colon-newline-after": null,
+        "value-list-comma-newline-after": null,
+        "indentation": null
+      }
+    }
+  ]
 }
