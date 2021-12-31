@@ -33,7 +33,7 @@
     "*.{js,cjs,json,yml,md}": "prettier --write"
   },
   "dependencies": {
-    "@emotion/react": "^11.7.0",
+    "@emotion/react": "^11.7.1",
     "classnames": "^2.3.1",
     "date-fns": "^2.27.0",
     "gsap": "^3.8.0",
