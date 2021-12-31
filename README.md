@@ -8,6 +8,12 @@ https://akutagawa.dev
 yarn install
 ```
 
+## Dev
+
+```sh
+yarn dev
+```
+
 ## Build
 
 ```sh
