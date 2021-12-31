@@ -2824,7 +2824,7 @@ jsx-ast-utils@^3.2.1:
 
 kimochii-pointer@^0.12.0:
   version "0.12.0"
-  resolved "https://registry.npmjs.org/kimochii-pointer/-/kimochii-pointer-0.12.0.tgz"
+  resolved "https://registry.yarnpkg.com/kimochii-pointer/-/kimochii-pointer-0.12.0.tgz#af0a90b39d3042a3f66474def7abd2636de1192c"
   integrity sha512-Kys6dPHe42UHXJB6qpBuASXCjDrD0O8jND+llI/kw6aDSKQ8Le3Na2+P7U8i/cyxgRd9ic8oqt/HojX51kgYjg==
 
 kind-of@^6.0.2, kind-of@^6.0.3:
