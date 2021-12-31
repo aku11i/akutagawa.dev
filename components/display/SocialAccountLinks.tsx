@@ -1,8 +1,5 @@
-import { css } from "@emotion/react";
-import { HTMLAttributes, VoidFunctionComponent } from "react";
+import { VoidFunctionComponent } from "react";
 
-import { Mq } from "../../styles/mediaQuery";
-import { size } from "../../styles/size";
 import { Link } from "../general/Link";
 import { IconGitHub } from "../icon/IconGitHub";
 import { IconSpotify } from "../icon/IconSpotify";
@@ -32,48 +29,21 @@ const accounts = [
   },
 ];
 
-export type SocialAccountLinksProps = HTMLAttributes<HTMLElement>;
+export type SocialAccountLinksProps = {
+  //
+};
 
 export const SocialAccountLinks: VoidFunctionComponent<SocialAccountLinksProps> =
-  ({ ...props }) => {
+  () => {
     return (
-      <nav css={styles.container} {...props}>
+      <nav className="flex flex-wrap justify-around">
         {accounts.map((_, i) => (
-          <Link
-            key={i}
-            css={styles.link}
-            href={_.url}
-            title={_.name}
-            data-kimochii-pointer="sticky"
-          >
-            <_.icon />
+          <Link key={i} href={_.url} title={_.name} pointerStyle="sticky">
+            <span className="inline-block h-14 p-2 w-14 sm:h-16 sm:w-16 md:h-24 md:w-24">
+              <_.icon />
+            </span>
           </Link>
         ))}
       </nav>
     );
   };
-
-const styles = {
-  container: css`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  `,
-
-  link: [
-    css`
-      height: ${size(14)};
-      padding: ${size(2)};
-      transition: all 0.3s ease;
-      width: ${size(14)};
-    `,
-    Mq.sm(css`
-      height: ${size(18)};
-      width: ${size(18)};
-    `),
-    Mq.md(css`
-      height: ${size(24)};
-      width: ${size(24)};
-    `),
-  ],
-};

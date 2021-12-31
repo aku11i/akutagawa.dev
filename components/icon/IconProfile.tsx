@@ -1,32 +1,22 @@
-import { css } from "@emotion/react";
 import Image from "next/image";
 import { VoidFunctionComponent } from "react";
 
 import profile from "../../public/profile.jpg";
 
-export type ProfileIconProps = JSX.IntrinsicElements["div"];
+export type ProfileIconProps = {
+  //
+};
 
-export const IconProfile: VoidFunctionComponent<ProfileIconProps> = ({
-  ...props
-}) => {
+export const IconProfile: VoidFunctionComponent<ProfileIconProps> = () => {
   return (
-    <div css={styles.imageContainer} {...props}>
+    <div className="relative w-full h-full">
       <Image
-        src={profile.src}
+        src={profile}
         alt="profile icon"
         data-kimochii-pointer="lighter"
-        css={styles.image}
         layout="fill"
+        className="rounded-full"
       />
     </div>
   );
-};
-
-const styles = {
-  imageContainer: css`
-    position: relative;
-  `,
-  image: css`
-    border-radius: 50%;
-  `,
 };
