@@ -33,17 +33,18 @@ export type SocialAccountLinksProps = {
   //
 };
 
-export const SocialAccountLinks: VoidFunctionComponent<SocialAccountLinksProps> =
-  () => {
-    return (
-      <nav className="flex flex-wrap justify-around">
-        {accounts.map((_, i) => (
-          <Link key={i} href={_.url} title={_.name} pointerStyle="sticky">
-            <span className="inline-block p-2 w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24">
-              <_.icon />
-            </span>
-          </Link>
-        ))}
-      </nav>
-    );
-  };
+export const SocialAccountLinks: VoidFunctionComponent<
+  SocialAccountLinksProps
+> = () => {
+  return (
+    <nav className="flex flex-wrap justify-around">
+      {accounts.map((_, i) => (
+        <Link key={i} href={_.url} title={_.name} pointerStyle="sticky">
+          <span className="inline-block p-2 w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24">
+            <_.icon />
+          </span>
+        </Link>
+      ))}
+    </nav>
+  );
+};
