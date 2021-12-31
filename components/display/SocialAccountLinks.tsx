@@ -39,7 +39,7 @@ export const SocialAccountLinks: VoidFunctionComponent<SocialAccountLinksProps> 
       <nav className="flex flex-wrap justify-around">
         {accounts.map((_, i) => (
           <Link key={i} href={_.url} title={_.name} pointerStyle="sticky">
-            <span className="inline-block h-14 p-2 w-14 sm:h-16 sm:w-16 md:h-24 md:w-24">
+            <span className="inline-block p-2 w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24">
               <_.icon />
             </span>
           </Link>

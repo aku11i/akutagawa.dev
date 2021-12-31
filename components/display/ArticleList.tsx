@@ -15,7 +15,7 @@ export const ArticleList: VoidFunctionComponent<ArticleListProps> = ({
       <h2 className="text-2xl">
         <span data-kimochii-pointer="text">Articles</span>
       </h2>
-      <ul className="list-none m-4">
+      <ul className="m-4 list-none">
         {articles.map((_) => (
           <li key={_.url} className="py-4">
             <ArticleItem article={_} />
