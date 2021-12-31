@@ -1,4 +1,3 @@
-import { css } from "@emotion/react";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
@@ -7,8 +6,6 @@ import { ArticleList } from "../components/display/ArticleList";
 import { Profile } from "../components/display/Profile";
 import { SocialAccountLinks } from "../components/display/SocialAccountLinks";
 import { getArticles } from "../helpers/article";
-import { Mq } from "../styles/mediaQuery";
-import { size } from "../styles/size";
 
 type StaticProps = {
   articles: Article[];
@@ -32,55 +29,23 @@ const Index: NextPage<StaticProps> = ({ articles }) => {
         <meta name="description" content="A profile of software engineer." />
       </Head>
 
-      <div css={styles.container}>
-        <main css={styles.main}>
-          <Profile css={styles.profile} />
-          <SocialAccountLinks css={styles.accounts} />
+      <div className="flex justify-center">
+        <main className="mb-36 w-11/12 max-w-3xl sm:w-10/12 md:w-9/12 lg:w-7/12 xl:w-6/12">
+          <div className="mt-24">
+            <Profile />
+          </div>
 
-          <ArticleList css={styles.articles} articles={articles} />
+          <div className="mt-12">
+            <SocialAccountLinks />
+          </div>
+
+          <div className="mt-16">
+            <ArticleList articles={articles} />
+          </div>
         </main>
       </div>
     </>
   );
-};
-
-const styles = {
-  container: css`
-    display: flex;
-    justify-content: center;
-  `,
-
-  main: [
-    css`
-      margin-bottom: ${size(36)};
-      width: 90%;
-    `,
-    Mq.sm(css`
-      width: 80%;
-    `),
-    Mq.md(css`
-      width: 70%;
-    `),
-    Mq.lg(css`
-      width: 60%;
-    `),
-    Mq.xl(css`
-      max-width: 800px;
-      width: 50%;
-    `),
-  ],
-
-  profile: css`
-    margin-top: ${size(24)};
-  `,
-
-  accounts: css`
-    margin-top: ${size(12)};
-  `,
-
-  articles: css`
-    margin-top: ${size(18)};
-  `,
 };
 
 export default Index;

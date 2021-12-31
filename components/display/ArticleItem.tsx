@@ -1,10 +1,8 @@
-import { css } from "@emotion/react";
 import { format } from "date-fns";
 import { useMemo, VoidFunctionComponent } from "react";
 
 import { Article } from "../../articles";
 import { Link } from "../general/Link";
-import { Typography } from "../general/Typography";
 
 export type ArticleItemProps = {
   article: Article;
@@ -12,7 +10,6 @@ export type ArticleItemProps = {
 
 export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
   article,
-  ...props
 }) => {
   const date = useMemo(
     () => format(new Date(article.publishedDate), "yyyy-MM-dd"),
@@ -22,23 +19,13 @@ export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
   const hostname = useMemo(() => new URL(article.url).hostname, [article.url]);
 
   return (
-    <article css={styles.container} {...props}>
-      <Link css={styles.link} href={article.url}>
-        <Typography as="h3" size="lg">
-          {article.title}
-        </Typography>
-        <Typography size="sm">
+    <article>
+      <Link href={article.url} block>
+        <h3 className="text-lg">{article.title}</h3>
+        <span className="text-sm">
           {date} {hostname}
-        </Typography>
+        </span>
       </Link>
     </article>
   );
-};
-
-const styles = {
-  container: css``,
-
-  link: css`
-    display: block;
-  `,
 };

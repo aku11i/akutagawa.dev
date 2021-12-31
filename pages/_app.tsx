@@ -1,4 +1,3 @@
-import "ress/dist/ress.min.css";
 import "../styles/global.css";
 import "../styles/color.css";
 import "../styles/font.css";

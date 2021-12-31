@@ -6,9 +6,10 @@
     "plugin:jsx-a11y/recommended",
     "next",
     "next/core-web-vitals",
+    "plugin:tailwindcss/recommended",
     "prettier"
   ],
-  "plugins": ["simple-import-sort"],
+  "plugins": ["simple-import-sort", "tailwindcss"],
   "parser": "@typescript-eslint/parser",
   "env": { "browser": true, "node": true, "es6": true },
   "parserOptions": {
