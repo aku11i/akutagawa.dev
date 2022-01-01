@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "setup": "yarn install --frozen-lockfile",
+    "dev": "yarn setup && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "npm-run-all lint:*",
@@ -15,19 +16,21 @@
     "fix:stylelint": "yarn lint:stylelint --fix",
     "fix:prettier": "yarn lint:prettier --write",
     "prepare": "husky install",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "type-check": "tsc --noEmit",
+    "ready": "npm-run-all setup type-check lint"
   },
   "lint-staged": {
-    "*.{ts}": [
+    "*.ts": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{tsx}": [
+    "*.tsx": [
       "eslint --fix",
       "stylelint --fix",
       "prettier --write"
     ],
-    "*.{css}": [
+    "*.css": [
       "stylelint --fix",
       "prettier --write"
     ],
