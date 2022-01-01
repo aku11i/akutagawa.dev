@@ -1,6 +1,6 @@
 import { VoidFunctionComponent } from "react";
 
-import { Article } from "../../articles";
+import { Article } from "../../types/article";
 import { ArticleItem } from "./ArticleItem";
 
 export type ArticleListProps = {

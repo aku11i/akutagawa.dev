@@ -1,11 +1,11 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
-import { Article } from "../articles";
 import { ArticleList } from "../components/display/ArticleList";
 import { Profile } from "../components/display/Profile";
 import { SocialAccountLinks } from "../components/display/SocialAccountLinks";
 import { getArticles } from "../helpers/article";
+import { Article } from "../types/article";
 
 type StaticProps = {
   articles: Article[];

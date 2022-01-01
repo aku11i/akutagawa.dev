@@ -1,6 +1,7 @@
 import Parser from "rss-parser";
 
-import { Article, OTHER_ARTICLES, RSS_LIST } from "../articles";
+import { OTHER_ARTICLES, RSS_LIST } from "../../articles";
+import { Article } from "../types/article";
 
 const parser = new Parser();
 
