@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "setup": "yarn install --frozen-lockfile",
-    "dev": "yarn setup && next dev",
+    "dev": "npm install && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "npm-run-all lint:*",
@@ -12,13 +11,13 @@
     "lint:stylelint": "stylelint \"**/*.{css,tsx}\" --ignore-path .gitignore",
     "lint:prettier": "prettier . --ignore-path .gitignore --check",
     "fix": "npm-run-all fix:*",
-    "fix:eslint": "yarn lint:eslint --fix",
-    "fix:stylelint": "yarn lint:stylelint --fix",
-    "fix:prettier": "yarn lint:prettier --write",
+    "fix:eslint": "npm run lint:eslint -- --fix",
+    "fix:stylelint": "npm run lint:stylelint -- --fix",
+    "fix:prettier": "npm run lint:prettier -- --write",
     "prepare": "husky install",
     "analyze": "ANALYZE=true next build",
     "type-check": "tsc --noEmit",
-    "ready": "npm-run-all setup type-check lint"
+    "ready": "npm install && npm-run-all type-check lint"
   },
   "lint-staged": {
     "*.ts": [
