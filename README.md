@@ -5,25 +5,26 @@ https://akutagawa.dev
 ## Setup
 
 ```sh
-yarn install
+npm install
 ```
 
 ## Dev
 
 ```sh
-yarn dev
+npm run dev
 ```
 
 ## Build
 
 ```sh
-yarn build
-# yarn start
+npm run build
+# npm run start
 ```
 
 ## Lint / Prettier
 
 ```sh
-yarn lint
-# yarn fix
+npm run type-check
+npm run lint
+# npm run fix
 ```
