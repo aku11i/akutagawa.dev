@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import { useMemo, VoidFunctionComponent } from "react";
 
-import { Article } from "../../articles";
+import { Article } from "../../types/article";
 import { Link } from "../general/Link";
 
 export type ArticleItemProps = {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { VoidFunctionComponent } from "react";
 
-import profile from "../../public/profile.jpg";
+import profile from "../../../public/profile.jpg";
 
 export type ProfileIconProps = {
   //

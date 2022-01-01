@@ -1,8 +1,4 @@
-export type Article = {
-  title: string;
-  url: string;
-  publishedDate: string;
-};
+import { Article } from "./src/types/article";
 
 export const RSS_LIST: string[] = ["https://zenn.dev/aktriver/feed"];
 
