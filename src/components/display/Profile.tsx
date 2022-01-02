@@ -1,6 +1,6 @@
 import { VoidFunctionComponent } from "react";
 
-import { Link } from "../general/Link";
+import { ExternalLink } from "../general/ExternalLink";
 import { Typography } from "../general/Typography";
 import { IconProfile } from "../icon/IconProfile";
 
@@ -19,9 +19,9 @@ export const Profile: VoidFunctionComponent<ProfileProps> = () => {
         Shuhei Akutagawa
       </Typography>
 
-      <Link href="https://twitter.com/aku11i">
+      <ExternalLink className="p-1" href="https://twitter.com/aku11i">
         <Typography className="text-lg">@aku11i</Typography>
-      </Link>
+      </ExternalLink>
     </section>
   );
 };

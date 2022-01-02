@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import { useMemo, VoidFunctionComponent } from "react";
 
 import { Article } from "../../types/article";
-import { Link } from "../general/Link";
+import { ExternalLink } from "../general/ExternalLink";
 import { Typography } from "../general/Typography";
 
 type ArticleItemProps = {
@@ -19,14 +19,14 @@ const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({ article }) => {
 
   return (
     <article>
-      <Link href={article.url} block>
+      <ExternalLink href={article.url} block>
         <Typography as="h3" className="text-lg">
           {article.title}
         </Typography>
         <Typography className="text-sm">
           {date} {hostname}
         </Typography>
-      </Link>
+      </ExternalLink>
     </article>
   );
 };
