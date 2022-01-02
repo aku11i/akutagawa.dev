@@ -1,21 +1,23 @@
 import classNames from "classnames";
-import { FunctionComponent, useMemo } from "react";
+import { AnchorHTMLAttributes, FunctionComponent, useMemo } from "react";
 
-export type LinkProps = {
+import { PointerStyle } from "../../types/pointerStyle";
+
+export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   openInNewTab?: boolean;
   block?: boolean;
   href: string;
-  title?: string;
-  pointerStyle?: "expanded" | "sticky";
+  pointerStyle?: PointerStyle;
 };
 
-export const Link: FunctionComponent<LinkProps> = ({
+export const ExternalLink: FunctionComponent<LinkProps> = ({
   openInNewTab,
   children,
   block,
   href,
-  title,
   pointerStyle = "expanded",
+  className,
+  ...props
 }) => {
   const additionalProps = useMemo(() => {
     if (openInNewTab) {
@@ -31,12 +33,13 @@ export const Link: FunctionComponent<LinkProps> = ({
   return (
     <a
       className={classNames(
+        className,
         block && "block",
         "text-blue-700 no-underline hover:underline dark:text-blue-400"
       )}
       href={href}
-      title={title}
       data-kimochii-pointer={pointerStyle}
+      {...props}
       {...additionalProps}
     >
       {children}

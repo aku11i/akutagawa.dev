@@ -2,7 +2,8 @@ import { format } from "date-fns";
 import { useMemo, VoidFunctionComponent } from "react";
 
 import { Article } from "../../types/article";
-import { Link } from "../general/Link";
+import { ExternalLink } from "../general/ExternalLink";
+import { Typography } from "../general/Typography";
 
 type ArticleItemProps = {
   article: Article;
@@ -18,12 +19,14 @@ const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({ article }) => {
 
   return (
     <article>
-      <Link href={article.url} block>
-        <h3 className="text-lg">{article.title}</h3>
-        <span className="text-sm">
+      <ExternalLink href={article.url} block>
+        <Typography as="h3" className="text-lg">
+          {article.title}
+        </Typography>
+        <Typography className="text-sm">
           {date} {hostname}
-        </span>
-      </Link>
+        </Typography>
+      </ExternalLink>
     </article>
   );
 };
@@ -37,9 +40,9 @@ export const Articles: VoidFunctionComponent<ArticlesProps> = ({
 }) => {
   return (
     <section>
-      <h2 className="text-2xl">
-        <span data-kimochii-pointer="text">Articles</span>
-      </h2>
+      <Typography as="h2" className="text-2xl">
+        Articles
+      </Typography>
       <ul className="m-4 list-none">
         {articles.map((_) => (
           <li key={_.url} className="py-4">

@@ -1,6 +1,6 @@
 import { VoidFunctionComponent } from "react";
 
-import { Link } from "../general/Link";
+import { ExternalLink } from "../general/ExternalLink";
 import { IconGitHub } from "../icon/IconGitHub";
 import { IconSpotify } from "../icon/IconSpotify";
 import { IconTwitter } from "../icon/IconTwitter";
@@ -39,11 +39,11 @@ export const SocialAccountLinks: VoidFunctionComponent<
   return (
     <nav className="flex flex-wrap justify-around">
       {accounts.map((_, i) => (
-        <Link key={i} href={_.url} title={_.name} pointerStyle="sticky">
+        <ExternalLink key={i} href={_.url} title={_.name} pointerStyle="sticky">
           <span className="inline-block p-2 w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24">
             <_.icon />
           </span>
-        </Link>
+        </ExternalLink>
       ))}
     </nav>
   );
