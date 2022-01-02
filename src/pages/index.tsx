@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
-import { ArticleList } from "../components/display/ArticleList";
+import { Articles } from "../components/display/Articles";
 import { Profile } from "../components/display/Profile";
 import { SocialAccountLinks } from "../components/display/SocialAccountLinks";
 import { getArticles } from "../helpers/article";
@@ -40,7 +40,7 @@ const Index: NextPage<StaticProps> = ({ articles }) => {
           </div>
 
           <div className="mt-16">
-            <ArticleList articles={articles} />
+            <Articles articles={articles} />
           </div>
         </main>
       </div>
