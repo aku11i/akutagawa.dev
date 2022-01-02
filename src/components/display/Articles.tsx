@@ -4,13 +4,11 @@ import { useMemo, VoidFunctionComponent } from "react";
 import { Article } from "../../types/article";
 import { Link } from "../general/Link";
 
-export type ArticleItemProps = {
+type ArticleItemProps = {
   article: Article;
 };
 
-export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
-  article,
-}) => {
+const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({ article }) => {
   const date = useMemo(
     () => format(new Date(article.publishedDate), "yyyy-MM-dd"),
     [article.publishedDate]
@@ -27,5 +25,28 @@ export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
         </span>
       </Link>
     </article>
+  );
+};
+
+export type ArticlesProps = {
+  articles: Article[];
+};
+
+export const Articles: VoidFunctionComponent<ArticlesProps> = ({
+  articles,
+}) => {
+  return (
+    <section>
+      <h2 className="text-2xl">
+        <span data-kimochii-pointer="text">Articles</span>
+      </h2>
+      <ul className="m-4 list-none">
+        {articles.map((_) => (
+          <li key={_.url} className="py-4">
+            <ArticleItem article={_} />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
