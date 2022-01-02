@@ -1,12 +1,14 @@
 import classNames from "classnames";
 import { FunctionComponent, useMemo } from "react";
 
+import { PointerStyle } from "../../types/pointerStyle";
+
 export type LinkProps = {
   openInNewTab?: boolean;
   block?: boolean;
   href: string;
   title?: string;
-  pointerStyle?: "expanded" | "sticky";
+  pointerStyle?: PointerStyle;
 };
 
 export const Link: FunctionComponent<LinkProps> = ({

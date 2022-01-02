@@ -1,6 +1,7 @@
 import { VoidFunctionComponent } from "react";
 
 import { Link } from "../general/Link";
+import { Typography } from "../general/Typography";
 import { IconProfile } from "../icon/IconProfile";
 
 export type ProfileProps = {
@@ -14,13 +15,13 @@ export const Profile: VoidFunctionComponent<ProfileProps> = () => {
         <IconProfile size={192} />
       </div>
 
-      <h1 className="text-3xl">
-        <span data-kimochii-pointer="text">Shuhei Akutagawa</span>
-      </h1>
+      <Typography as="h1" className="text-3xl">
+        Shuhei Akutagawa
+      </Typography>
 
-      <span className="text-lg">
-        <Link href="https://twitter.com/aku11i">@aku11i</Link>
-      </span>
+      <Link href="https://twitter.com/aku11i">
+        <Typography className="text-lg">@aku11i</Typography>
+      </Link>
     </section>
   );
 };
