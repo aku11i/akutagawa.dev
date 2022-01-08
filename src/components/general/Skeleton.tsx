@@ -11,7 +11,7 @@ export const Skeleton: VoidFunctionComponent<SkeletonProps> = ({
   return (
     <div
       className={classNames(
-        "w-full h-full bg-gray-400 rounded-md opacity-50",
+        "w-full h-full bg-gray-400 rounded-md opacity-10",
         className
       )}
     />
