@@ -11,7 +11,11 @@ export const IconProfile: VoidFunctionComponent<ProfileIconProps> = ({
   size,
 }) => {
   return (
-    <div className="relative w-full h-full">
+    <div className="relative">
+      <div
+        className="absolute bg-gray-400 rounded-full opacity-50"
+        style={{ width: size, height: size }}
+      />
       <Image
         src={profile}
         alt="profile icon"
