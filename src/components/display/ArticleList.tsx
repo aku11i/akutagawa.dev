@@ -11,7 +11,7 @@ export const ArticleList: VoidFunctionComponent<ArticleListProps> = ({
   articles,
 }) => {
   return (
-    <ul className="m-4 list-none">
+    <ul className="list-none">
       {articles.map((_) => (
         <ArticleItem key={_.url} article={_} />
       ))}
@@ -21,7 +21,7 @@ export const ArticleList: VoidFunctionComponent<ArticleListProps> = ({
 
 export const ArticleListSkeleton: VoidFunctionComponent = () => {
   return (
-    <ul>
+    <ul className="list-none">
       {Array(5)
         .fill(null)
         .map((_, i) => (
