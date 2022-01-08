@@ -39,7 +39,7 @@ const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({ article }) => {
           <div className="py-px h-7">
             <Skeleton />
           </div>
-          <div className="py-px my-[2px] w-4/12 h-5">
+          <div className="py-px mt-1 w-4/12 h-5">
             <Skeleton />
           </div>
         </div>
