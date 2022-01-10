@@ -4,10 +4,10 @@ import { Article } from "../../types/article";
 import { ExternalLink } from "../general/ExternalLink";
 import { Typography } from "../general/Typography";
 import { IconRss } from "../icon/IconRss";
-import { ArticleList, ArticleListSkeleton } from "./ArticleList";
+import { ArticleList } from "./ArticleList";
 
 export type ArticlesProps = {
-  articles: Article[] | undefined;
+  articles: Article[];
 };
 
 export const Articles: VoidFunctionComponent<ArticlesProps> = ({
@@ -30,11 +30,7 @@ export const Articles: VoidFunctionComponent<ArticlesProps> = ({
       </div>
 
       <div className="mt-4">
-        {articles ? (
-          <ArticleList articles={articles} />
-        ) : (
-          <ArticleListSkeleton />
-        )}
+        <ArticleList articles={articles} />
       </div>
     </section>
   );

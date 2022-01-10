@@ -1,24 +1,26 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
 import { Articles } from "../components/display/Articles";
 import { Profile } from "../components/display/Profile";
 import { SocialAccountLinks } from "../components/display/SocialAccountLinks";
 import { fetchArticles } from "../helpers/article";
-import { useMounted } from "../hooks/useMounted";
-import { useSessionStorage } from "../hooks/useSessionStorage";
 import { Article } from "../types/article";
 
-const Index: NextPage = () => {
-  const [articles, setArticles] = useSessionStorage<Article[] | undefined>(
-    "articles",
-    undefined
-  );
+export type IndexProps = {
+  articles: Article[];
+};
 
-  useMounted(() => {
-    fetchArticles().then(setArticles);
-  });
+export const getStaticProps: GetStaticProps<IndexProps> = async () => {
+  const articles = await fetchArticles();
 
+  return {
+    props: { articles },
+    revalidate: 60 * 10, // In Seconds
+  };
+};
+
+const Index: NextPage<IndexProps> = ({ articles }) => {
   return (
     <>
       <Head>
