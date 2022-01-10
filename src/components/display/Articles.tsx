@@ -3,7 +3,7 @@ import { VoidFunctionComponent } from "react";
 import { Article } from "../../types/article";
 import { ExternalLink } from "../general/ExternalLink";
 import { Typography } from "../general/Typography";
-import { IconRss } from "../icon/IconRss";
+import { RssIcon } from "../icon/RssIcon";
 import { ArticleList } from "./ArticleList";
 
 export type ArticlesProps = {
@@ -25,7 +25,7 @@ export const Articles: VoidFunctionComponent<ArticlesProps> = ({
           className="inline-block mb-1 ml-3 w-5 h-5"
           href="https://akutagawa.dev/articles.rss"
         >
-          <IconRss />
+          <RssIcon />
         </ExternalLink>
       </div>
 

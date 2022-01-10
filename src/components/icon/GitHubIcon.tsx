@@ -1,6 +1,6 @@
 import { VoidFunctionComponent } from "react";
 
-export const IconGitHub: VoidFunctionComponent = () => (
+export const GitHubIcon: VoidFunctionComponent = () => (
   <svg
     className="fill-github dark:fill-github-dark"
     role="img"

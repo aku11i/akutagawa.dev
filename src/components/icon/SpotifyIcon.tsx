@@ -1,6 +1,6 @@
 import { VoidFunctionComponent } from "react";
 
-export const IconSpotify: VoidFunctionComponent = () => (
+export const SpotifyIcon: VoidFunctionComponent = () => (
   <svg
     className="fill-spotify"
     role="img"

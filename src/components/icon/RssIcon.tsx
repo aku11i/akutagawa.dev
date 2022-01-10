@@ -2,7 +2,7 @@ import { VoidFunctionComponent } from "react";
 
 // https://fontawesome.com/license
 
-export const IconRss: VoidFunctionComponent = () => (
+export const RssIcon: VoidFunctionComponent = () => (
   <svg
     aria-hidden="true"
     focusable="false"
