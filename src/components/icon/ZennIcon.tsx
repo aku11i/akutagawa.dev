@@ -1,6 +1,6 @@
 import { VoidFunctionComponent } from "react";
 
-export const IconZenn: VoidFunctionComponent = () => (
+export const ZennIcon: VoidFunctionComponent = () => (
   <svg
     className="fill-zenn"
     role="img"

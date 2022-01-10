@@ -6,7 +6,7 @@ import { KimochiiPointer } from "kimochii-pointer";
 import type { AppProps } from "next/app";
 import { useEffect } from "react";
 
-import { LayoutDefault } from "../components/layout/LayoutDefault";
+import { DefaultLayout } from "../components/layout/DefaultLayout";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   useEffect(() => {
@@ -21,9 +21,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 
   return (
     <>
-      <LayoutDefault>
+      <DefaultLayout>
         <Component {...pageProps} />
-      </LayoutDefault>
+      </DefaultLayout>
     </>
   );
 }

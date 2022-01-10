@@ -7,7 +7,7 @@ export type ProfileIconProps = {
   size: string | number;
 };
 
-export const IconProfile: VoidFunctionComponent<ProfileIconProps> = ({
+export const ProfileIcon: VoidFunctionComponent<ProfileIconProps> = ({
   size,
 }) => {
   return (

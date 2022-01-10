@@ -1,6 +1,6 @@
 import { VoidFunctionComponent } from "react";
 
-export const IconTwitter: VoidFunctionComponent = () => (
+export const TwitterIcon: VoidFunctionComponent = () => (
   <svg
     className="fill-twitter"
     role="img"

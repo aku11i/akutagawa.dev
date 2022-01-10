@@ -2,7 +2,7 @@ import { VoidFunctionComponent } from "react";
 
 import { ExternalLink } from "../general/ExternalLink";
 import { Typography } from "../general/Typography";
-import { IconProfile } from "../icon/IconProfile";
+import { ProfileIcon } from "../icon/ProfileIcon";
 
 export type ProfileProps = {
   //
@@ -12,7 +12,7 @@ export const Profile: VoidFunctionComponent<ProfileProps> = () => {
   return (
     <section className="text-center">
       <div className="flex justify-center">
-        <IconProfile size={192} />
+        <ProfileIcon size={192} />
       </div>
 
       <div className="mt-8">

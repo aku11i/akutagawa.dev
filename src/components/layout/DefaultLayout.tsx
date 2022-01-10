@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
 
-export const LayoutDefault: FunctionComponent = ({ children }) => {
+export const DefaultLayout: FunctionComponent = ({ children }) => {
   return <div>{children}</div>;
 };
