@@ -3,6 +3,7 @@ import "zenn-content-css";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
 import { BlogArticle } from "../../components/display/BlogArticle";
+import { SingleColmunLayout } from "../../components/layout/SingleColmunLayout";
 import {
   getBlogArticle,
   getBlogArticlePaths,
@@ -43,9 +44,9 @@ export const getStaticProps: GetStaticProps<
 
 const ArticlePage: NextPage<ArticlePageProps> = ({ blogArticle }) => {
   return (
-    <div>
+    <SingleColmunLayout>
       <BlogArticle blogArticle={blogArticle} />
-    </div>
+    </SingleColmunLayout>
   );
 };
 
