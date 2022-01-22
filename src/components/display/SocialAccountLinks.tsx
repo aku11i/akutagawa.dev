@@ -40,10 +40,10 @@ export const SocialAccountLinks: VoidFunctionComponent<
     <nav className="flex">
       {accounts.map((_, i) => (
         <>
-          {i !== 0 && <div className="ml-2" />}
+          {i !== 0 && <div className="ml-4 sm:ml-2" />}
           <ExternalLink
             key={i}
-            className="p-4"
+            className="p-2 sm:p-4"
             href={_.url}
             title={_.name}
             pointerStyle="sticky"
