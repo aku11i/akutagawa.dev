@@ -2,6 +2,7 @@ export type BlogArticleMetaData = {
   title: string;
   published: boolean;
   publishedAt: string;
+  tags: string[];
 };
 
 export type BlogArticle = {

@@ -2,6 +2,7 @@ import { VoidFunctionComponent } from "react";
 
 import { BlogArticleMetaData } from "../../types/blogArticle";
 import { Typography } from "../general/Typography";
+import { Tag } from "./Tag";
 
 export type BlogArticleHeaderProps = {
   metadata: BlogArticleMetaData;
@@ -17,6 +18,14 @@ export const BlogArticleHeader: VoidFunctionComponent<
       </Typography>
       <div className="mt-2" />
       <Typography>{metadata.publishedAt}</Typography>
+      <div className="mt-1">
+        {metadata.tags.map((_, i) => (
+          <>
+            {i !== 0 && <div className="inline-block ml-1" />}
+            <Tag key={_} name={_} />
+          </>
+        ))}
+      </div>
     </header>
   );
 };
