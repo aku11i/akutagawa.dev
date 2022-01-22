@@ -5,7 +5,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: black;
+    --color-background: #001b2c;
     --color-text: white;
 
     color: var(--color-text);
