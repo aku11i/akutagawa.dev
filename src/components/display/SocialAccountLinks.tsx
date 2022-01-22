@@ -37,13 +37,22 @@ export const SocialAccountLinks: VoidFunctionComponent<
   SocialAccountLinksProps
 > = () => {
   return (
-    <nav className="flex flex-wrap justify-around">
+    <nav className="flex">
       {accounts.map((_, i) => (
-        <ExternalLink key={i} href={_.url} title={_.name} pointerStyle="sticky">
-          <span className="inline-block p-2 w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24">
-            <_.icon />
-          </span>
-        </ExternalLink>
+        <>
+          {i !== 0 && <div className="ml-2" />}
+          <ExternalLink
+            key={i}
+            className="p-4"
+            href={_.url}
+            title={_.name}
+            pointerStyle="sticky"
+          >
+            <span className="inline-block w-12 h-12">
+              <_.icon />
+            </span>
+          </ExternalLink>
+        </>
       ))}
     </nav>
   );
