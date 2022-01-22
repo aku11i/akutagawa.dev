@@ -13,7 +13,7 @@ export const BlogArticleHeader: VoidFunctionComponent<
 > = ({ metadata }) => {
   return (
     <header className="py-2">
-      <Typography className="text-3xl" as="h1">
+      <Typography className="text-2xl sm:text-3xl" as="h1">
         {metadata.title}
       </Typography>
       <div className="mt-2 ml-1">
