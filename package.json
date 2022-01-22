@@ -50,7 +50,7 @@
     "zenn-markdown-html": "^0.1.100"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^12.0.7",
+    "@next/bundle-analyzer": "^12.0.8",
     "@stylelint/postcss-css-in-js": "^0.37.2",
     "@types/react": "17.0.38",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
