@@ -29,7 +29,7 @@ const Index: NextPage<IndexProps> = ({ articles }) => {
         <meta name="description" content="A profile of software engineer." />
       </Head>
 
-      <div className="mt-24">
+      <div className="mt-24 lg:mt-36">
         <Profile />
       </div>
 
@@ -37,7 +37,7 @@ const Index: NextPage<IndexProps> = ({ articles }) => {
         <SocialAccountLinks />
       </div>
 
-      <div className="mt-16">
+      <div className="mt-12">
         <Articles articles={articles} />
       </div>
     </SingleColmunLayout>

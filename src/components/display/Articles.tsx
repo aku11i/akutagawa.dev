@@ -22,10 +22,13 @@ export const Articles: VoidFunctionComponent<ArticlesProps> = ({
 
         <ExternalLink
           openInNewTab
-          className="inline-block mb-1 ml-3 w-5 h-5"
+          className="inline-block p-2 ml-1"
           href="https://akutagawa.dev/articles.rss"
+          pointerStyle="sticky"
         >
-          <RssIcon />
+          <span className="inline-block w-7 h-7">
+            <RssIcon />
+          </span>
         </ExternalLink>
       </div>
 

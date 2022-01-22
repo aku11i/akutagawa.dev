@@ -3,7 +3,6 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jsx-a11y/recommended",
     "next",
     "next/core-web-vitals",
     "plugin:tailwindcss/recommended",
