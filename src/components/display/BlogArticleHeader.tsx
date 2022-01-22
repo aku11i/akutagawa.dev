@@ -16,7 +16,7 @@ export const BlogArticleHeader: VoidFunctionComponent<
       <Typography className="text-3xl" as="h1">
         {metadata.title}
       </Typography>
-      <div className="mt-2">
+      <div className="mt-2 ml-1">
         <Typography className="text-sm">{metadata.publishedAt}</Typography>
       </div>
       <div className="mt-2">
