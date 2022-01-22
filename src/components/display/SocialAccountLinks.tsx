@@ -48,7 +48,7 @@ export const SocialAccountLinks: VoidFunctionComponent<
             title={_.name}
             pointerStyle="sticky"
           >
-            <span className="inline-block w-12 h-12">
+            <span className="inline-block w-10 h-10 sm:w-12 sm:h-12">
               <_.icon />
             </span>
           </ExternalLink>
