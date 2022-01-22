@@ -26,6 +26,8 @@ export const getBlogArticle = async (
     filePath
   );
 
+  // TODO metadata が埋まっているか確認
+
   const contentHtml = markdownToHtml(content);
 
   return { metadata, content, contentHtml, slug: getSlug(filePath) };

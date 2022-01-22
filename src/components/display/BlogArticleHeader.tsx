@@ -12,10 +12,11 @@ export const BlogArticleHeader: VoidFunctionComponent<
 > = ({ metadata }) => {
   return (
     <header className="py-2">
-      <Typography className="text-2xl" as="h1">
+      <Typography className="text-3xl" as="h1">
         {metadata.title}
       </Typography>
-      <Typography className="text-sm">{metadata.publishedAt}</Typography>
+      <div className="mt-2" />
+      <Typography>{metadata.publishedAt}</Typography>
     </header>
   );
 };

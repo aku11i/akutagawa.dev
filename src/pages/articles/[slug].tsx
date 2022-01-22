@@ -45,7 +45,9 @@ export const getStaticProps: GetStaticProps<
 const ArticlePage: NextPage<ArticlePageProps> = ({ blogArticle }) => {
   return (
     <SingleColmunLayout>
-      <BlogArticle blogArticle={blogArticle} />
+      <div className="mt-24">
+        <BlogArticle blogArticle={blogArticle} />
+      </div>
     </SingleColmunLayout>
   );
 };
