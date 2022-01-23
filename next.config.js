@@ -9,7 +9,7 @@ const config = {
     return [
       {
         source: "/articles.rss",
-        destination: "https://feed.akutagawa.dev/articles.rss",
+        destination: "/api/articles.rss",
       },
     ];
   },

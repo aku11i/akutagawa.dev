@@ -38,6 +38,7 @@
   "dependencies": {
     "classnames": "^2.3.1",
     "date-fns": "^2.28.0",
+    "feed": "^4.2.2",
     "gsap": "^3.9.1",
     "kimochii-pointer": "^0.12.2",
     "markdown-yaml-metadata-parser": "^3.0.0",
