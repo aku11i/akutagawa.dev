@@ -19,11 +19,9 @@ export const BlogArticleHeader: VoidFunctionComponent<
       <Typography className="text-2xl sm:text-3xl" as="h1">
         {metadata.title}
       </Typography>
-
       <div className="mt-2">
         <Typography className="text-sm">{date}</Typography>
       </div>
-
       <div className="mt-2">
         {metadata.tags.map((_, i) => (
           <>
