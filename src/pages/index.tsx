@@ -8,11 +8,11 @@ import { SingleColmunLayout } from "../components/layout/SingleColmunLayout";
 import { fetchArticles } from "../helpers/article";
 import { Article } from "../types/article";
 
-export type IndexPageProps = {
+export type IndexProps = {
   articles: Article[];
 };
 
-export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
+export const getStaticProps: GetStaticProps<IndexProps> = async () => {
   const articles = await fetchArticles();
 
   return {
@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
   };
 };
 
-const IndexPage: NextPage<IndexPageProps> = ({ articles }) => {
+const Index: NextPage<IndexProps> = ({ articles }) => {
   return (
     <SingleColmunLayout>
       <Head>
@@ -44,4 +44,4 @@ const IndexPage: NextPage<IndexPageProps> = ({ articles }) => {
   );
 };
 
-export default IndexPage;
+export default Index;
