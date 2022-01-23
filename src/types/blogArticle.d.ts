@@ -1,6 +1,5 @@
 export type BlogArticleMetaData = {
   title: string;
-  description: string;
   published: boolean;
   publishedAt: string;
   tags: string[];
