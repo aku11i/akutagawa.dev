@@ -2,8 +2,10 @@ import "zenn-content-css";
 
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 
 import { BlogArticle } from "../../components/display/BlogArticle";
+import { Typography } from "../../components/general/Typography";
 import { SingleColmunLayout } from "../../components/layout/SingleColmunLayout";
 import {
   getBlogArticle,
@@ -52,7 +54,19 @@ const ArticlePage: NextPage<ArticlePageProps> = ({ blogArticle }) => {
       </Head>
 
       <div className="mt-24">
-        <BlogArticle blogArticle={blogArticle} />
+        <div className="">
+          <Link href="/">
+            <a
+              className="py-2 px-px hover:underline"
+              data-kimochii-pointer="expanded"
+            >
+              <Typography className="text-lg">{"<< home"}</Typography>
+            </a>
+          </Link>
+        </div>
+        <div className="mt-4">
+          <BlogArticle blogArticle={blogArticle} />
+        </div>
       </div>
     </SingleColmunLayout>
   );
