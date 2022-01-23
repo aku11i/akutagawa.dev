@@ -5,7 +5,7 @@ import { Articles } from "../components/display/Articles";
 import { Profile } from "../components/display/Profile";
 import { SocialAccountLinks } from "../components/display/SocialAccountLinks";
 import { SingleColmunLayout } from "../components/layout/SingleColmunLayout";
-import { fetchArticles } from "../helpers/article";
+import { getAllArticles } from "../helpers/article";
 import { Article } from "../types/article";
 
 export type IndexPageProps = {
@@ -13,7 +13,7 @@ export type IndexPageProps = {
 };
 
 export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
-  const articles = await fetchArticles();
+  const articles = await getAllArticles();
 
   return {
     props: { articles },

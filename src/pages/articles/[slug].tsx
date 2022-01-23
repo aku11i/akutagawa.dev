@@ -1,12 +1,13 @@
 import "zenn-content-css";
 
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 
 import { BlogArticle } from "../../components/display/BlogArticle";
 import { SingleColmunLayout } from "../../components/layout/SingleColmunLayout";
 import {
   getBlogArticle,
-  getBlogArticlePaths,
+  getBlogArticleSlugs,
   getFilePath,
 } from "../../helpers/blogArticle";
 import type { BlogArticle as BlogArticleType } from "../../types/blogArticle";
@@ -20,8 +21,8 @@ export type ArticlePageParams = {
 };
 
 export const getStaticPaths: GetStaticPaths<ArticlePageParams> = async () => {
-  const blogArticlePaths = await getBlogArticlePaths();
-  const paths = blogArticlePaths.map((blogArticlePath) => ({
+  const slugs = await getBlogArticleSlugs();
+  const paths = slugs.map((blogArticlePath) => ({
     params: { slug: blogArticlePath },
   }));
   return { paths, fallback: false };
@@ -45,6 +46,11 @@ export const getStaticProps: GetStaticProps<
 const ArticlePage: NextPage<ArticlePageProps> = ({ blogArticle }) => {
   return (
     <SingleColmunLayout>
+      <Head>
+        <title>{blogArticle.metadata.title} | akutagawa.dev</title>
+        <meta name="description" content={blogArticle.metadata.description} />
+      </Head>
+
       <div className="mt-24">
         <BlogArticle blogArticle={blogArticle} />
       </div>

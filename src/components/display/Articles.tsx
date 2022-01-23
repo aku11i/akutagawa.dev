@@ -1,5 +1,6 @@
 import { VoidFunctionComponent } from "react";
 
+import { BASE_URL } from "../../env";
 import { Article } from "../../types/article";
 import { ExternalLink } from "../general/ExternalLink";
 import { Typography } from "../general/Typography";
@@ -23,7 +24,7 @@ export const Articles: VoidFunctionComponent<ArticlesProps> = ({
         <ExternalLink
           openInNewTab
           className="inline-block p-2 ml-1"
-          href="https://akutagawa.dev/articles.rss"
+          href={`${BASE_URL}/articles.rss`}
           pointerStyle="sticky"
         >
           <span className="inline-block w-7 h-7">
