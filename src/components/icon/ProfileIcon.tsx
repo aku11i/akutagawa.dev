@@ -19,7 +19,6 @@ export const ProfileIcon: VoidFunctionComponent<ProfileIconProps> = ({
         data-kimochii-pointer="lighter"
         width={size}
         height={size}
-        layout="fill"
         className="rounded-full"
       />
     </div>
