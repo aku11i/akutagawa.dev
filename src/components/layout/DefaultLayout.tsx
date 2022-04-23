@@ -1,5 +1,11 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, ReactNode } from "react";
 
-export const DefaultLayout: FunctionComponent = ({ children }) => {
+export type DefaultLayoutProps = {
+  children: ReactNode;
+};
+
+export const DefaultLayout: FunctionComponent<DefaultLayoutProps> = ({
+  children,
+}) => {
   return <div>{children}</div>;
 };
