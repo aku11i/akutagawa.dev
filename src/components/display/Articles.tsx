@@ -22,7 +22,7 @@ export const Articles: VoidFunctionComponent<ArticlesProps> = ({
 
         <ExternalLink
           openInNewTab
-          className="inline-block p-2 ml-1"
+          className="flex justify-center items-center ml-2 w-10 h-10"
           href="https://akutagawa.dev/articles.rss"
           pointerStyle="sticky"
         >
