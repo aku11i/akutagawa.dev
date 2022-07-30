@@ -11,7 +11,7 @@ export const Profile: VoidFunctionComponent<ProfileProps> = () => {
   return (
     <section className="text-left">
       <div className="flex items-center">
-        <div className="w-16 h-16 sm:w-24 sm:h-24">
+        <div className="h-16 w-16 sm:h-24 sm:w-24">
           <ProfileIcon size={128} />
         </div>
 

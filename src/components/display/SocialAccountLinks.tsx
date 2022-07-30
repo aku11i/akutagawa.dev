@@ -41,12 +41,12 @@ export const SocialAccountLinks: VoidFunctionComponent<
       {accounts.map((_, i) => (
         <ExternalLink
           key={i}
-          className="flex justify-center items-center w-16 h-16 sm:w-20 sm:h-20"
+          className="flex h-16 w-16 items-center justify-center sm:h-20 sm:w-20"
           href={_.url}
           title={_.name}
           pointerStyle="sticky"
         >
-          <span className="inline-block w-10 h-10 sm:w-12 sm:h-12">
+          <span className="inline-block h-10 w-10 sm:h-12 sm:w-12">
             <_.icon />
           </span>
         </ExternalLink>
