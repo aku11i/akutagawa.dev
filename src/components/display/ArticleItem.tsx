@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import { useMemo, VoidFunctionComponent } from "react";
 
 import { Article } from "../../types/article";
@@ -12,11 +11,6 @@ export type ArticleItemProps = {
 export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
   article,
 }) => {
-  const date = useMemo(
-    () => format(new Date(article.publishedDate), "yyyy-MM-dd"),
-    [article]
-  );
-
   const hostname = useMemo(() => new URL(article.url).hostname, [article]);
 
   return (
@@ -26,9 +20,8 @@ export const ArticleItem: VoidFunctionComponent<ArticleItemProps> = ({
           <Typography as="h3" className="text-lg">
             {article.title}
           </Typography>
-          <Typography className="text-sm">
-            {date} {hostname}
-          </Typography>
+
+          <Typography className="text-sm">{hostname}</Typography>
         </ExternalLink>
       </article>
     </li>
