@@ -2,6 +2,7 @@ import { VoidFunctionComponent } from "react";
 
 import { ExternalLink } from "../general/ExternalLink";
 import { GitHubIcon } from "../icon/GitHubIcon";
+import { RaindropIcon } from "../icon/RaindropIcon";
 import { SpotifyIcon } from "../icon/SpotifyIcon";
 import { TwitterIcon } from "../icon/TwitterIcon";
 import { ZennIcon } from "../icon/ZennIcon";
@@ -11,6 +12,11 @@ const accounts = [
     name: "Twitter",
     url: "https://twitter.com/aku11i",
     icon: TwitterIcon,
+  },
+  {
+    name: "Raindrop.io",
+    url: "https://raindrop.io/aku11i",
+    icon: RaindropIcon,
   },
   {
     name: "Zenn",
