@@ -23,7 +23,7 @@ export const Articles: VoidFunctionComponent<ArticlesProps> = ({
         <ExternalLink
           openInNewTab
           className="ml-2 flex h-10 w-10 items-center justify-center"
-          href="https://akutagawa.dev/articles.rss"
+          href="/articles.rss"
           pointerStyle="sticky"
         >
           <span className="inline-block h-7 w-7">
