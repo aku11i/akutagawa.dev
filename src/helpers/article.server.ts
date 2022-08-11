@@ -1,13 +1,13 @@
 import Parser from "rss-parser";
 
 import { Article } from "../types/article";
-
-const RSS_URL = "https://feed.akutagawa.dev/articles.rss";
+import { assertIsDefined } from "./assert";
 
 const parser = new Parser();
 
 export const fetchArticles = async (): Promise<Article[]> => {
-  const feed = await parser.parseURL(RSS_URL);
+  assertIsDefined(process.env.RSS_URL);
+  const feed = await parser.parseURL(process.env.RSS_URL);
 
   return feed.items.map((item) => ({
     title: item.title!,

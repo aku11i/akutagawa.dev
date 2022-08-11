@@ -5,7 +5,7 @@ import { Articles } from "../components/display/Articles";
 import { Profile } from "../components/display/Profile";
 import { SocialAccountLinks } from "../components/display/SocialAccountLinks";
 import { SingleColmunLayout } from "../components/layout/SingleColmunLayout";
-import { fetchArticles } from "../helpers/article";
+import { fetchArticles } from "../helpers/article.server";
 import { Article } from "../types/article";
 
 export type IndexProps = {

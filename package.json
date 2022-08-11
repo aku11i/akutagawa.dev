@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm install && next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "npm install && NODE_OPTIONS='--require ./env' next dev",
+    "build": "NODE_OPTIONS='--require ./env' next build",
+    "start": "NODE_OPTIONS='--require ./env' next start",
     "lint": "npm-run-all lint:*",
     "lint:eslint": "next lint",
     "lint:stylelint": "stylelint \"**/*.{css,tsx}\" --ignore-path .gitignore",
